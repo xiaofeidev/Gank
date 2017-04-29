@@ -2,6 +2,8 @@
 干货集中营的又一款安卓客户端
 
 MVP+RxJava 2.x+retrofit 2.x
+
+应用数据来[自干货集中营](https://gank.io/)
 # 用到的开源库
 [gson](https://github.com/google/gson)
 
