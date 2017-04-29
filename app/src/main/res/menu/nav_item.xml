@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/main_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/news"
+            android:icon="@drawable/ic_news"
+            android:title="@string/news"
+            android:checked="true"/>
+        <item
+            android:id="@+id/android"
+            android:icon="@drawable/ic_android"
+            android:title="@string/android"/>
+        <item
+            android:id="@+id/ios"
+            android:icon="@drawable/ic_ios"
+            android:title="@string/ios"/>
+        <item
+            android:id="@+id/app"
+            android:icon="@drawable/ic_app"
+            android:title="@string/app"/>
+        <item
+            android:id="@+id/web"
+            android:icon="@drawable/ic_web"
+            android:title="@string/web"/>
+        <item
+            android:id="@+id/expand"
+            android:icon="@drawable/ic_expand"
+            android:title="@string/expand"/>
+        <item
+            android:id="@+id/xiatuijian"
+            android:icon="@drawable/ic_xiatuijian"
+            android:title="@string/xiatuijian"/>
+        <item
+            android:id="@+id/fuli"
+            android:icon="@drawable/ic_fuli"
+            android:title="@string/fuli"/>
+
+    </group>
+
+    <!--<item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send"/>
+        </menu>
+    </item>-->
+    <group
+        android:id="@+id/second_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/night"
+            android:icon="@drawable/ic_night"
+            android:title="@string/night"
+            android:checkable="false"/>
+        <!--<item-->
+            <!--android:id="@+id/setting"-->
+            <!--android:icon="@drawable/ic_setting"-->
+            <!--android:title="@string/setting"-->
+            <!--android:checkable="false"/>-->
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_about"
+            android:title="@string/about"
+            android:checkable="false"/>
+    </group>
+</menu>

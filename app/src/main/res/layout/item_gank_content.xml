@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:tag="content"
+    android:clickable="true"
+    app:cardBackgroundColor="@color/card_background"
+    app:elevation="9dp"
+    app:cardCornerRadius="0dp">
+    <!--android:background="@drawable/button_state_selector"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    app:cardCornerRadius="8dp"
+    -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_state_selector">
+
+        <com.github.xiaofei_dev.gank.ui.customview.RatioImageView
+            android:id="@+id/card_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:padding="5dp"
+            tools:src="@drawable/ic_launcher"/>
+        <!--android:scaleType="center"/>-->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="4dp"
+            android:paddingTop="4dp"
+            android:layout_toEndOf="@+id/card_image"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.1"
+            android:maxLines="2"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            tools:text="Rxjava详解：关于响应式编程你需要了解的一切。观察者，被观察者，线程切换"/>
+            <!--android:transitionName="title"-->
+
+        <TextView
+            android:id="@+id/person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="15dp"
+            android:layout_toEndOf="@+id/card_image"
+            android:textColor="@color/colorSecondText"
+            android:textSize="12sp"
+            tools:text="TextView"/>
+
+
+    </RelativeLayout>
+
+
+    <!--<TextView
+           android:id="@+id/date"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/title"
+           android:layout_toEndOf="@+id/person"
+           android:textColor="@color/colorSecondText"
+           android:textSize="12sp"
+           tools:text="TextView"/>
+    <ImageView
+        android:id="@+id/card_image"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="bottom"
+        android:textSize="16sp"
+        android:padding="6dp"
+        android:textColor="@color/colorPrimaryText"
+        android:text="hehe"
+        android:background="@color/translucent"
+        android:layout_gravity="bottom"/>-->
+
+</android.support.v7.widget.CardView>

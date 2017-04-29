@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="query_suggestions">
+        <item>Android</item>
+        <item>Activity</item>
+        <item>Awesome</item>
+        <item>ButterKnife</item>
+        <item>Binder</item>
+        <item>C++</item>
+        <item>Dagger</item>
+        <item>Python</item>
+        <item>iOS</item>
+        <item>SCALA</item>
+        <item>RxJava</item>
+        <item>Retrofit</item>
+        <item>RecyclerView</item>
+        <item>React</item>
+        <item>ReactNative</item>
+        <item>Ruby</item>
+        <item>JavaScript</item>
+        <item>MVP</item>
+        <item>Markdown</item>
+        <item>Swift</item>
+    </string-array>
+
+    <string-array name="gank_item">
+        <item>@string/android</item>
+        <item>@string/ios</item>
+        <item>@string/app</item>
+        <item>@string/web</item>
+        <item>@string/expand</item>
+        <item>@string/xiatuijian</item>
+        <item>@string/fuli</item>
+    </string-array>
+</resources>
