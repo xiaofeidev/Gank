@@ -6,12 +6,13 @@
     android:id="@+id/card_content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="8dp"
     android:tag="content"
     android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="@color/card_background"
-    app:elevation="9dp"
-    app:cardCornerRadius="0dp">
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
     <!--android:background="@drawable/button_state_selector"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
@@ -19,8 +20,8 @@
     -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_state_selector">
+        android:layout_height="wrap_content">
+        <!--android:background="@drawable/button_state_selector">-->
 
         <com.github.xiaofei_dev.gank.ui.customview.RatioImageView
             android:id="@+id/card_image"
@@ -58,7 +59,6 @@
             android:textColor="@color/colorSecondText"
             android:textSize="12sp"
             tools:text="TextView"/>
-
 
     </RelativeLayout>
 

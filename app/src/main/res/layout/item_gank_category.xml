@@ -6,11 +6,10 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:layout_marginTop="10dp"
-    android:clickable="true"
+    android:layout_marginTop="8dp"
     app:cardBackgroundColor="@color/card_background"
     app:cardCornerRadius="0dp"
-    app:elevation="13dp">
+    app:cardElevation="0.5dp">
 
     <TextView
         android:id="@+id/item_title"

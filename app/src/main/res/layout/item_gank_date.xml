@@ -5,10 +5,10 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="8dp"
     app:cardBackgroundColor="@color/card_background"
     app:cardCornerRadius="0dp"
-    app:elevation="16dp">
+    app:cardElevation="1dp">
 
     <TextView
         android:id="@+id/item_date"
