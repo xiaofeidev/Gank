@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Gank</string>
+    <string name="app_version">Gank 1.0</string>
 
     <string name="news">每日干货</string>
     <string name="android">Android</string>
