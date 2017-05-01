@@ -1,6 +1,7 @@
 package com.github.xiaofei_dev.gank.presenter.impl;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.github.xiaofei_dev.gank.model.GankDay;
 import com.github.xiaofei_dev.gank.presenter.base.GankBasePresenter;
@@ -22,6 +23,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePresenter {
 
+    private static final String TAG = "GankDayPresenterImpl";
     @NonNull
     private final CompositeDisposable compositeDisposable;
 
@@ -52,11 +54,13 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
                 .subscribeWith(new DisposableObserver<GankDay>() {
                     @Override
                     public void onNext(GankDay gankDay){
-                        if(gankDay.getResults() != null){
+                        if(/*gankDay.getResults().androidList != null && */gankDay.getCategory().size() != 0){
                             mGankDayView.setGankDayInfo(gankDay);
+                            //Log.d(TAG, "onNext: "+gankDay.getResults().toString());
                         }else {
                             mGankDayView.reGetData();
                         }
+                        Log.d(TAG, "onNext: "+gankDay.toString());
                     }
 
                     @Override
@@ -82,7 +86,7 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
                 .subscribeWith(new DisposableObserver<GankDay>() {
                     @Override
                     public void onNext(GankDay gankDay){
-                        if(gankDay.getCategory() != null){
+                        if(gankDay.getCategory().size() != 0){
                             mGankDayView.setLoadMoreErr(true);
                             mGankDayView.loadMoreGankData(gankDay);
                         }else {

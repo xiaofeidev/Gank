@@ -321,6 +321,9 @@
 # 将下面替换成自己的实体类
 -keep class com.github.xiaofei_dev.gank.model.** { *; }
 -keep class com.github.xiaofei_dev.gank.model.bean.** { *; }
+#-keep class com.google.gson.examples.android.model.** { *; }
+#-keep class * implements com.google.gson.TypeAdapterFactory
+#-keep class * implements com.google.gson.JsonSerializer-keep class * implements com.google.gson.JsonDeserializer
 -keep class com.google.gson.** { *;}
 
 
@@ -504,3 +507,314 @@
 ##litepalang
 #-keep class org.litepal.** {*;}
 #-keep class * extends org.litepal.crud.DataSupport {*;}
+
+
+
+
+
+
+##MeiZhi
+#
+#-keep public class * implements com.bumptech.glide.module.GlideModule
+#-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+#    **[] $VALUES;
+#    public *;
+#}
+#-dontwarn com.squareup.okhttp.**
+#
+#-keep class butterknife.** { *; }
+#-dontwarn butterknife.internal.**
+#-keep class **$$ViewBinder { *; }
+#
+#-keepclasseswithmembernames class * {
+#    @butterknife.* <fields>;
+#}
+#
+#-keepclasseswithmembernames class * {
+#    @butterknife.* <methods>;
+#}
+#
+#-keepattributes *Annotation*
+#-keepclassmembers class ** {
+#    @com.squareup.otto.Subscribe public *;
+#    @com.squareup.otto.Produce public *;
+#}
+#
+#-keep public class * implements com.bumptech.glide.module.GlideModule
+#-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+#    **[] $VALUES;
+#    public *;
+#}
+#
+#-keep public class com.github.xiaofei_dev.gank.R$*{
+#		public static final int *;
+#}
+#
+#
+#-keep class com.github.xiaofei_dev.gank.BuildConfig { *; }
+#-keep public class * extends android.os.Binder
+#
+## Keep the support library
+#-keep class android.support.** { *; }
+#-keep interface android.support.** { *; }
+#
+## For using GSON @Expose annotation
+#-keepattributes *Annotation*
+#
+#-keepattributes EnclosingMethod
+#
+## Gson specific classes
+#-keep class sun.misc.Unsafe { *; }
+#-keep class com.google.gson.stream.** { *; }
+#
+#-keepclassmembers enum * {
+#    public static **[] values();
+#    public static ** valueOf(java.lang.String);
+#}
+#
+#-keep class * implements android.os.Parcelable {
+#  public static final android.os.Parcelable$Creator *;
+#}
+#
+#-keepattributes Signature
+#-keep class **.R$* {*;}
+#-ignorewarnings
+#
+#-verbose
+#-keepclasseswithmembernames class * {
+#    native <methods>;
+#}
+#
+#-keep com.github.xiaofei_dev.gank.** { *;}
+#
+#-keepclasseswithmembernames class * {
+#    native <methods>;
+#}
+#
+#-keep class android.support.v8.renderscript.** { *; }
+#
+#
+## Remove logging calls
+#-assumenosideeffects class android.util.Log {
+#    public static boolean isLoggable(java.lang.String, int);
+#    public static int v(...);
+#    public static int i(...);
+#    public static int w(...);
+#    public static int d(...);
+#    public static int e(...);
+#}
+#
+## For Guava:
+#-dontwarn javax.annotation.**
+#-dontwarn javax.inject.**
+#-dontwarn sun.misc.Unsafe
+#
+## For RxJava:
+#-dontwarn rx.**
+#-dontwarn org.mockito.**
+#-dontwarn org.junit.**
+#-dontwarn org.robolectric.**
+#-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+#    long producerIndex;
+#    long consumerIndex;
+#}
+#-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+#    long producerNode;
+#    long consumerNode;
+#}
+#
+#-keepattributes Signature
+#-keepattributes *Annotation*
+#-dontwarn okio.**
+#
+## Platform calls Class.forName on types which do not exist on Android to determine platform.
+#-dontnote retrofit2.Platform
+## Platform used when running on RoboVM on iOS. Will not be used at runtime.
+#-dontnote retrofit2.Platform$IOS$MainThreadExecutor
+## Platform used when running on Java 8 VMs. Will not be used at runtime.
+#-dontwarn retrofit2.Platform$Java8
+## Retain generic type information for use by reflection by converters and adapters.
+#-keepattributes Signature
+## Retain declared checked exceptions for use by a Proxy instance.
+#-keepattributes Exceptions
+#
+#-keep class sun.misc.Unsafe { *; }
+#
+#-dontwarn java.lang.invoke.*
+#
+## 使用注解
+#-keepattributes *Annotation*,Signature
+#
+## 保持混淆时类的实名及行号(——————— 调试时打开 ———————)
+#-keepattributes SourceFile,LineNumberTable
+#
+## 枚举需要keep see http://proguard.sourceforge.net/manual/examples.html#enumerations
+#-keepclassmembers enum * {
+#    **[] $VALUES;
+#    public *;
+#}
+#
+#-keep class me.henrytao.smoothappbarlayout.** { *; }
+#
+## umeng
+#-keepclassmembers class * {
+#   public <init>(org.json.JSONObject);
+#}
+#
+#-keep public class mcom.github.xiaofei_dev.gank.R$*{
+#    public static final int *;
+#}
+#
+#-keepclassmembers enum * {
+#    public static **[] values();
+#    public static ** valueOf(java.lang.String);
+#}
+#
+#-keep class com.umeng.** { *; }
+#-keep public class * extends com.umeng.**
+#
+#-assumenosideeffects class android.util.Log {
+#    public static boolean isLoggable(java.lang.String, int);
+#    public static int d(...);
+#    public static int w(...);
+#    public static int v(...);
+#    public static int i(...);
+#}
+#
+#
+#
+#
+#
+##GankDaily
+#-dontwarn com.squareup.okhttp.**
+#
+#-keep class butterknife.** { *; }
+#-dontwarn butterknife.internal.**
+#-keep class **$$ViewBinder { *; }
+#
+#-keepclasseswithmembernames class * {
+#    @butterknife.* <fields>;
+#}
+#
+#-keepclasseswithmembernames class * {
+#    @butterknife.* <methods>;
+#}
+#
+#-keepattributes *Annotation*
+#-keepclassmembers class ** {
+#    @com.squareup.otto.Subscribe public *;
+#    @com.squareup.otto.Produce public *;
+#}
+#
+#
+#-keep public class com.github.xiaofei_dev.gank.R$*{
+#		public static final int *;
+#}
+#
+#-keep public class com.umeng.fb.ui.ThreadView {}
+#
+#-keep class com.github.xiaofei_dev.gank.BuildConfig { *; }
+#-keep public class * extends android.os.Binder
+#
+## Keep the support library
+#-keep class android.support.** { *; }
+#-keep interface android.support.** { *; }
+#
+## For using GSON @Expose annotation
+#-keepattributes *Annotation*
+#
+#-keepattributes EnclosingMethod
+#
+## Gson specific classes
+#-keep class sun.misc.Unsafe { *; }
+#-keep class com.google.gson.stream.** { *; }
+#
+#-keepclassmembers enum * {
+#    public static **[] values();
+#    public static ** valueOf(java.lang.String);
+#}
+#
+#-keep class * implements android.os.Parcelable {
+#  public static final android.os.Parcelable$Creator *;
+#}
+#
+#-keepattributes Signature
+#-keep class **.R$* {*;}
+#-ignorewarnings
+#
+#-verbose
+#-keepclasseswithmembernames class * {
+#    native <methods>;
+#}
+#
+#-keep class com.github.xiaofei_dev.gank.** { *;}
+#
+#-keepclasseswithmembernames class * {
+#    native <methods>;
+#}
+#
+#-keep class android.support.v8.renderscript.** { *; }
+#
+## ActiveAndroid
+#-keep class com.activeandroid.** { *; }
+#-keep class com.activeandroid.**.** { *; }
+#-keep class * extends com.activeandroid.Model
+#-keep class * extends com.activeandroid.serializer.TypeSerializer
+#
+#
+## Remove logging calls
+#-assumenosideeffects class android.util.Log {
+#    public static boolean isLoggable(java.lang.String, int);
+#    public static int v(...);
+#    public static int i(...);
+#    public static int w(...);
+#    public static int d(...);
+#    public static int e(...);
+#}
+#
+## For Guava:
+#-dontwarn javax.annotation.**
+#-dontwarn javax.inject.**
+#-dontwarn sun.misc.Unsafe
+#
+## For RxJava:
+#-dontwarn org.mockito.**
+#-dontwarn org.junit.**
+#-dontwarn org.robolectric.**
+#
+#
+#-keepattributes Signature
+#-keepattributes *Annotation*
+#-keep class com.squareup.okhttp.** { *; }
+#-keep interface com.squareup.okhttp.** { *; }
+#-dontwarn com.squareup.okhttp.**
+#
+#-dontwarn rx.**
+#-dontwarn retrofit.**
+#-keep class retrofit.** { *; }
+#-keepclasseswithmembers class * {
+#    @retrofit.http.* <methods>;
+#}
+#
+#-keep class sun.misc.Unsafe { *; }
+#
+#-dontwarn java.lang.invoke.*
+#
+## 使用注解
+#-keepattributes *Annotation*,Signature
+#
+## 保持混淆时类的实名及行号(——————— 调试时打开 ———————)
+#-keepattributes SourceFile,LineNumberTable
+#
+## 枚举需要keep see http://proguard.sourceforge.net/manual/examples.html#enumerations
+#-keepclassmembers enum * {
+#    **[] $VALUES;
+#    public *;
+#}
+#
+##glide
+#-keep public class * implements com.bumptech.glide.module.GlideModule
+#-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+#    **[] $VALUES;
+#    public *;
+#}

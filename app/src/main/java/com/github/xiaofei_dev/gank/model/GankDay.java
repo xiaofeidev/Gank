@@ -46,19 +46,19 @@ public final class GankDay {
         @Expose
         @SerializedName("福利") public List<GankAPI> girlList;
 
-//        @Override
-//        public String toString() {
-//            return "Results{" +
-//                    "androidList=" + androidList +
-//                    ", iOSList=" + iOSList +
-//                    ", AppList=" + AppList +
-//                    ", webList=" + webList +
-//                    ", expandList=" + expandList +
-//                    ", xiatuijianList=" + xiatuijianList +
-//                    ", videoList=" + videoList +
-//                    ", girlList=" + girlList +
-//                    '}';
-//        }
+        @Override
+        public String toString() {
+            return "Results{" +
+                    "androidList=" + androidList +
+                    ", iOSList=" + iOSList +
+                    ", AppList=" + AppList +
+                    ", webList=" + webList +
+                    ", expandList=" + expandList +
+                    ", xiatuijianList=" + xiatuijianList +
+                    ", videoList=" + videoList +
+                    ", girlList=" + girlList +
+                    '}';
+        }
     }
 
     public List<String> getCategory() {
@@ -110,9 +110,15 @@ public final class GankDay {
 
     public ArrayList<GankDayBean> getMultiGankData(){
         ArrayList<GankDayBean> list = new ArrayList<>();
+        if(results == null){
+            return null;
+        }
 
-        String date = results.androidList.get(0).publishedAt;
-        list.add(new GankDayBean(GankDayBean.DATE,date));
+        if(results.androidList != null){
+            String date = results.androidList.get(0).publishedAt;
+            list.add(new GankDayBean(GankDayBean.DATE,date));
+        }
+
 
         if(category.contains("Android")){
             list.add(new GankDayBean(GankDayBean.CATEGORY,"Android"));
@@ -162,10 +168,10 @@ public final class GankDay {
         return results;
     }
 
-//    @Override
-//    public String toString() {
-//        return "GankDay{" +
-//                "results=" + results +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "GankDay{" +
+                "results=" + results +
+                '}'+ "Categoty:"+category;
+    }
 }
