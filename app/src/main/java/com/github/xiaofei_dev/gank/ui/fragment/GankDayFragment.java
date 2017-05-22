@@ -13,6 +13,7 @@ import com.github.xiaofei_dev.gank.model.GankDay;
 import com.github.xiaofei_dev.gank.model.bean.GankDayBean;
 import com.github.xiaofei_dev.gank.presenter.impl.GankDayPresenterImpl;
 import com.github.xiaofei_dev.gank.ui.adapter.DayAdapter;
+import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.ItemClickListener;
 import com.github.xiaofei_dev.gank.ui.view.GankDayView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
@@ -87,7 +88,7 @@ public final class GankDayFragment extends GankBaseFragment implements GankDayVi
         /*mDayAdapter = new SectionAdapter(R.layout.item_gank_content,R.layout.item_gank_category,
                 gankList,this);*/
         mDayAdapter = new DayAdapter(this,gankList);
-        mDayAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        mDayAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         mDayAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override public void onLoadMoreRequested() {
                 //Log.d(TAG, "onLoadMoreRequested: ");
@@ -114,6 +115,7 @@ public final class GankDayFragment extends GankBaseFragment implements GankDayVi
                 }
             }
         });
+        mDayAdapter.setAutoLoadMoreSize(1);
     }
 
     public int getCount() {
@@ -197,7 +199,7 @@ public final class GankDayFragment extends GankBaseFragment implements GankDayVi
             ((RefreshView) activity).hideRefresh();
         }
         if (getUserVisibleHint()) {
-            ToastUtils.showShort(R.string.networkfailure);
+            ToastUtils.showShort(R.string.network_failure);
         }
     }
 }

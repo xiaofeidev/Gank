@@ -18,7 +18,7 @@ public final class AboutActivity extends AppCompatActivity {
     public void onAbout(View view) {
         switch (view.getId()) {
             case R.id.itemOpenSource:
-                String url = getString(R.string.openSourceLink);
+                String url = getString(R.string.open_source_link);
                 OpenUtil.openLink(view.getContext(), null, url, false);
                 //OpenUtil.openLink(view.getContext(), null, url, false);
                 finish();

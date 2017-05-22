@@ -16,6 +16,7 @@ import com.github.xiaofei_dev.gank.model.GankCategory;
 import com.github.xiaofei_dev.gank.model.bean.GankAPI;
 import com.github.xiaofei_dev.gank.presenter.impl.GankCategoryPresenterImpl;
 import com.github.xiaofei_dev.gank.ui.adapter.MeiZhiAdapter;
+import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.MeiZhiItemClickListener;
 import com.github.xiaofei_dev.gank.ui.view.GankCategoryView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
@@ -133,7 +134,7 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
             ((RefreshView) activity).hideRefresh();
         }
         if (getUserVisibleHint()) {
-            ToastUtils.showShort(R.string.networkfailure);
+            ToastUtils.showShort(R.string.network_failure);
         }
 
     }

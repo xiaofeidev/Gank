@@ -31,8 +31,8 @@ import com.github.xiaofei_dev.gank.ui.fragment.GankCategoryFragment;
 import com.github.xiaofei_dev.gank.ui.fragment.GankDayFragment;
 import com.github.xiaofei_dev.gank.ui.fragment.GankMeiZhiFragment;
 import com.github.xiaofei_dev.gank.ui.fragment.GankMeizhiRandomFragment;
-import com.github.xiaofei_dev.gank.ui.fragment.ItemClickListener;
-import com.github.xiaofei_dev.gank.ui.fragment.MeiZhiItemClickListener;
+import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.ItemClickListener;
+import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.MeiZhiItemClickListener;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
 import com.github.xiaofei_dev.gank.util.ToastUtils;
@@ -104,9 +104,9 @@ public final class MainActivity extends AppCompatActivity implements
         GankBaseFragment mGankBaseFragment;
         if(title.equals(getString(R.string.news))){
             mGankBaseFragment = new GankDayFragment();
-        }else if(title.equals(getString(R.string.fuli))){
+        }else if(title.equals(getString(R.string.fu_li))){
             mGankBaseFragment = GankMeiZhiFragment.
-                    newInstance(getResources().getString(R.string.fuli));
+                    newInstance(getResources().getString(R.string.fu_li));
         }else {
             mGankBaseFragment = GankCategoryFragment.newInstance(title);
         }
@@ -231,7 +231,7 @@ public final class MainActivity extends AppCompatActivity implements
                     } else {
                         if (toolbarTitle.equals("福利")) {
                             GankMeiZhiFragment mGankMeiZhiFragment = GankMeiZhiFragment.
-                                    newInstance(getResources().getString(R.string.fuli));
+                                    newInstance(getResources().getString(R.string.fu_li));
                             fm.beginTransaction().replace(R.id.container, mGankMeiZhiFragment, TAG).commit();
                             showRefresh();
                         } else if (isGankItem) {
@@ -380,17 +380,17 @@ public final class MainActivity extends AppCompatActivity implements
                         randomNormal.setTitle(R.string.random);
                         break;
                     case R.id.xiatuijian:
-                        replaceFragment(getResources().getString(R.string.xiatuijian));
+                        replaceFragment(getResources().getString(R.string.xia_tui_jian));
                         item.setChecked(true);
                         menuItemId = id;
                         randomNormal.setTitle(R.string.random);
                         break;
                     case R.id.fuli:
                         GankMeiZhiFragment mGankMeiZhiFragment = GankMeiZhiFragment.
-                                newInstance(getResources().getString(R.string.fuli));
+                                newInstance(getResources().getString(R.string.fu_li));
                         fm.beginTransaction().replace(R.id.container, mGankMeiZhiFragment, TAG).commit();
                         showRefresh();
-                        toolbar.setTitle(getResources().getString(R.string.fuli));
+                        toolbar.setTitle(getResources().getString(R.string.fu_li));
                         item.setChecked(true);
                         menuItemId = id;
                         randomNormal.setTitle(R.string.random);
@@ -398,12 +398,12 @@ public final class MainActivity extends AppCompatActivity implements
                     case R.id.night:
                         GankBaseFragment fragment = (GankBaseFragment) fm.findFragmentByTag(TAG);
                         if (fragment instanceof GankCategoryRandomFragment | fragment instanceof GankMeizhiRandomFragment) {
-                            ToastUtils.showShort(R.string.themehint);
+                            ToastUtils.showShort(R.string.theme_hint);
                             break;
                         }
                         AlertDialog settingDialog = new AlertDialog.Builder(MainActivity.this,R.style.Theme_AppCompat_Dialog_MinWidth)
-                                .setTitle(R.string.dialogtitle)
-                                .setMessage(R.string.dialogmessage)
+                                .setTitle(R.string.dialog_title)
+                                .setMessage(R.string.dialog_message)
                                 .setPositiveButton(getString(android.R.string.yes),
                                         new DialogInterface.OnClickListener() {
                                             @Override

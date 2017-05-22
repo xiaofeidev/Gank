@@ -54,7 +54,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="@string/aboutXBB_Title"
+                android:text="@string/about_app"
                 android:textStyle="bold"/>
 
 
@@ -67,7 +67,7 @@
                 android:clickable="true"
                 android:padding="8dp"
                 android:onClick="onAbout"
-                android:text="@string/aboutXBB_OpenSource"/>
+                android:text="@string/about_source"/>
 
             <TextView
                 android:id="@+id/itemScoreAndFeedback"
@@ -78,7 +78,7 @@
                 android:clickable="true"
                 android:padding="8dp"
                 android:onClick="onAbout"
-                android:text="@string/aboutXBB_ScoreAndFeedback"/>
+                android:text="@string/about_feedback"/>
             <TextView
                 android:id="@+id/guide"
                 android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="32dp"
-            android:text="@string/aboutDeveloper"/>
+            android:text="@string/about_developer"/>
 
         <TextView
             android:id="@+id/close"
@@ -115,7 +115,7 @@
             android:clickable="true"
             android:onClick="onAbout"
             android:textColor="@color/colorAccent"
-            android:text="@string/iKnow"/>
+            android:text="@string/i_know"/>
     </RelativeLayout>
 
 </RelativeLayout>

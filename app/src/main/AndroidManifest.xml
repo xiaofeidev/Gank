@@ -25,7 +25,7 @@
         </activity>
         <activity
             android:name=".ui.activity.SimpleMeiZhiActivity"
-            android:label="@string/fuli"
+            android:label="@string/fu_li"
             android:theme="@style/AppTheme.NoActionBar.simple"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:screenOrientation="portrait">

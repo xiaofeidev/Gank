@@ -13,7 +13,7 @@ import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.github.xiaofei_dev.gank.R;
-import com.github.xiaofei_dev.gank.ui.customview.RatioImageView;
+import com.github.xiaofei_dev.gank.ui.custom_view.RatioImageView;
 import com.github.xiaofei_dev.gank.model.bean.GankAPI;
 
 import java.util.List;

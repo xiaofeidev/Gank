@@ -4,11 +4,11 @@
 
     <item
         android:id="@+id/open"
-        android:title="@string/openbybrowers"
+        android:title="@string/open_by_browser"
         app:showAsAction="never"/>
     <item
         android:id="@+id/copy"
-        android:title="@string/coryURL"
+        android:title="@string/cory_url"
         app:showAsAction="never"/>
     <item
         android:id="@+id/share"

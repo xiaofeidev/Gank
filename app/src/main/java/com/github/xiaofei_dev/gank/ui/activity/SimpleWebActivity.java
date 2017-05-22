@@ -148,7 +148,7 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
                 ClipboardManager cmb = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData data = ClipData.newPlainText("gankUrl", url);
                 cmb.setPrimaryClip(data);
-                ToastUtils.showShort(R.string.urlcopysuccess);
+                ToastUtils.showShort(R.string.url_copy_success);
                 break;
             case R.id.share:
                 Intent sendIntent = new Intent();

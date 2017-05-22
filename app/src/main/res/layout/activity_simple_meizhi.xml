@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<com.github.xiaofei_dev.gank.ui.customview.RatioImageView
+<!--<custom_vieww.RatioImageView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/meizhi"
@@ -32,14 +32,14 @@
     </android.support.design.widget.AppBarLayout>-->
     <include layout="@layout/toolbar"/>
 
-    <com.github.xiaofei_dev.gank.ui.customview.RatioImageView
+    <com.github.xiaofei_dev.gank.ui.custom_view.RatioImageView
         android:id="@+id/meizhi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:layout_gravity="center"
+        android:layout_gravity="center_vertical"
         android:transitionName="simple transition name"
         tools:src="@drawable/ic_launcher"/>
+    <!--android:layout_marginTop="?attr/actionBarSize"-->
 </FrameLayout>
 
 

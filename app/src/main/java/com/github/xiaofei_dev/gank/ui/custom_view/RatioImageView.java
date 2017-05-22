@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.github.xiaofei_dev.gank.ui.customview;
+package com.github.xiaofei_dev.gank.ui.custom_view;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatImageView;

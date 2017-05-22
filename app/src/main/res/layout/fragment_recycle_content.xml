@@ -4,7 +4,7 @@
     android:id="@+id/item_content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="10dp"
+    android:paddingBottom="0dp"
     android:scrollbars="vertical"/>
     <!--android:nestedScrollingEnabled="false"/>-->
 

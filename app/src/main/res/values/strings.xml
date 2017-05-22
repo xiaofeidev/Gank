@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Gank</string>
-    <string name="app_version">Gank 1.0</string>
+    <string name="app_version">Gank V1.1</string>
 
     <string name="news">每日干货</string>
     <string name="android">Android</string>
@@ -8,11 +8,11 @@
     <string name="app">App</string>
     <string name="web">前端</string>
     <string name="expand">拓展资源</string>
-    <string name="xiatuijian">瞎推荐</string>
-    <string name="fuli">福利</string>
+    <string name="xia_tui_jian">瞎推荐</string>
+    <string name="fu_li">福利</string>
     <!--<string name="video">小电影</string>-->
-    <string name="dialogtitle">重要提示</string>
-    <string name="dialogmessage">切换主题将导致当前界面重建！您确定吗？</string>
+    <string name="dialog_title">重要提示</string>
+    <string name="dialog_message">切换主题将导致当前界面重建！您确定吗？</string>
 
     <string name="night">夜间模式</string>
     <string name="setting">设置</string>
@@ -23,33 +23,34 @@
     <string name="normal">普通推荐</string>
     <string name="nonsupport">当前界面不支持随机推荐功能</string>
 
-    <string name="networkfailure">网络错误，获取数据失败</string>
+    <string name="network_failure">网络错误，获取数据失败</string>
     <string name="failure">获取更多数据出错</string>
-    <string name="themehint">随机推荐界面不支持主题切换，请转至其他界面再切换主题</string>
+    <string name="theme_hint">随机推荐界面不支持主题切换，请转至其他界面再切换主题</string>
 
     <string name="tools">lykchat信息发送系统是Python3开发的，通过模拟微信网页端，
         基于个人微信号，为系统管理人员提供信息发送工具。
         实现的功能有用户登录管理、微信登陆管理和微信信息发送功能。</string>
     
-    <string name="openbybrowers">从浏览器打开</string>
-    <string name="coryURL">复制链接</string>
+    <string name="open_by_browser">从浏览器打开</string>
+    <string name="cory_url">复制链接</string>
     <string name="share">分享</string>
     
-    <string name="urlcopysuccess">链接已成功复制至剪贴板</string>
+    <string name="url_copy_success">链接已成功复制至剪贴板</string>
     
     <string name="explain">您必须授予应用读写存储设备的权限才能保存图片哦</string>
-    <string name="denideHint">拒绝授予读写存储设备的权限将无法保存图片哦</string>
-    <string name="saveImage">保存图片</string>
-    <string name="saveImagesSuccess">图片已成功保存至:</string>
-    <string name="saveImagesFault">图片保存失败</string>
+    <string name="deny_hint">拒绝授予读写存储设备的权限将无法保存图片哦</string>
+    <string name="save_image">保存图片</string>
+    <string name="save_image_success">图片已成功保存</string>
+    <string name="open">打开</string>
+    <string name="save_image_fault">图片保存失败</string>
 
-    <string name="aboutDeveloper">作者：github @xiaofei-dev</string>
-    <string name="openSourceLink">https://github.com/xiaofei-dev/Gank</string>
-    <string name="aboutXBB_Title">关于本应用：</string>
-    <string name="aboutXBB_OpenSource">
+    <string name="about_developer">作者：github @xiaofei-dev</string>
+    <string name="open_source_link">https://github.com/xiaofei-dev/Gank</string>
+    <string name="about_app">关于本应用：</string>
+    <string name="about_source">
         ▶ 您可以点此访问<a href="">项目托管地址</a>。
     </string>
-    <string name="aboutXBB_ScoreAndFeedback">
+    <string name="about_feedback">
         ▶ 您还可以点此给应用<a href="">评分或反馈</a>。
     </string>
     <!--<string name="aboutXBB_Donate">
@@ -58,6 +59,6 @@
     <string name="guide">
         ▶ <a href="">节假日小编不上班内容不更新哦</a>。
     </string>
-    <string name="iKnow">知道了</string>
+    <string name="i_know">知道了</string>
 
 </resources>

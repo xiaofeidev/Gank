@@ -12,6 +12,7 @@ import com.github.xiaofei_dev.gank.model.GankCategory;
 import com.github.xiaofei_dev.gank.model.bean.GankAPI;
 import com.github.xiaofei_dev.gank.presenter.impl.GankCategoryPresenterImpl;
 import com.github.xiaofei_dev.gank.ui.adapter.CategoryAdapter;
+import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.ItemClickListener;
 import com.github.xiaofei_dev.gank.ui.view.GankCategoryView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
@@ -118,7 +119,7 @@ public final class GankCategoryFragment extends GankBaseFragment implements Gank
             ((RefreshView) activity).hideRefresh();
         }
         if (getUserVisibleHint()) {
-            ToastUtils.showShort(R.string.networkfailure);
+            ToastUtils.showShort(R.string.network_failure);
         }
     }
 
@@ -159,7 +160,7 @@ public final class GankCategoryFragment extends GankBaseFragment implements Gank
     private void initCategoryAdapter(){
         mCategoryAdapter = new CategoryAdapter(this, R.layout.item_gank_content,
                 gankList);
-        mCategoryAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        mCategoryAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         mCategoryAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override public void onLoadMoreRequested() {
 //                recyclerView.postDelayed(new Runnable() {
@@ -206,6 +207,7 @@ public final class GankCategoryFragment extends GankBaseFragment implements Gank
                 }
             }
         });
+        mCategoryAdapter.setAutoLoadMoreSize(1);
     }
 
     public static GankCategoryFragment newInstance(String argument)

@@ -54,7 +54,7 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
                 .subscribeWith(new DisposableObserver<GankDay>() {
                     @Override
                     public void onNext(GankDay gankDay){
-                        if(/*gankDay.getResults().androidList != null && */gankDay.getCategory().size() != 0){
+                        if(/*gankDay.getResults().androidList != null && */!gankDay.getCategory().isEmpty()/*size() != 0*/){
                             mGankDayView.setGankDayInfo(gankDay);
                             //Log.d(TAG, "onNext: "+gankDay.getResults().toString());
                         }else {
@@ -86,7 +86,7 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
                 .subscribeWith(new DisposableObserver<GankDay>() {
                     @Override
                     public void onNext(GankDay gankDay){
-                        if(gankDay.getCategory().size() != 0){
+                        if(!gankDay.getCategory().isEmpty()){
                             mGankDayView.setLoadMoreErr(true);
                             mGankDayView.loadMoreGankData(gankDay);
                         }else {

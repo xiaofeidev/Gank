@@ -6,7 +6,7 @@
     android:id="@+id/card_content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
+    android:layout_marginBottom="6dp"
     android:tag="content"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content">
         <!--android:background="@drawable/button_state_selector">-->
 
-        <com.github.xiaofei_dev.gank.ui.customview.RatioImageView
+        <com.github.xiaofei_dev.gank.ui.custom_view.RatioImageView
             android:id="@+id/card_image"
             android:layout_width="80dp"
             android:layout_height="80dp"

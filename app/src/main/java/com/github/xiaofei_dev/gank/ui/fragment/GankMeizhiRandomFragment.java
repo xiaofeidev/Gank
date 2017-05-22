@@ -15,6 +15,7 @@ import com.github.xiaofei_dev.gank.model.GankRandom;
 import com.github.xiaofei_dev.gank.model.bean.GankAPI;
 import com.github.xiaofei_dev.gank.presenter.impl.GankRandomPresenterImpl;
 import com.github.xiaofei_dev.gank.ui.adapter.MeiZhiAdapter;
+import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.MeiZhiItemClickListener;
 import com.github.xiaofei_dev.gank.ui.view.GankRandomView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
@@ -100,7 +101,7 @@ public final class GankMeizhiRandomFragment extends GankBaseFragment implements 
             ((RefreshView) activity).hideRefresh();
         }
         if (getUserVisibleHint()) {
-            ToastUtils.showShort(R.string.networkfailure);
+            ToastUtils.showShort(R.string.network_failure);
         }
 
     }

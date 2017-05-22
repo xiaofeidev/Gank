@@ -29,7 +29,7 @@
         <item>@string/app</item>
         <item>@string/web</item>
         <item>@string/expand</item>
-        <item>@string/xiatuijian</item>
-        <item>@string/fuli</item>
+        <item>@string/xia_tui_jian</item>
+        <item>@string/fu_li</item>
     </string-array>
 </resources>

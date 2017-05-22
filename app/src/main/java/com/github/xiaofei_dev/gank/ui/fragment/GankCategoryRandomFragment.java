@@ -11,6 +11,7 @@ import com.github.xiaofei_dev.gank.model.GankRandom;
 import com.github.xiaofei_dev.gank.model.bean.GankAPI;
 import com.github.xiaofei_dev.gank.presenter.impl.GankRandomPresenterImpl;
 import com.github.xiaofei_dev.gank.ui.adapter.CategoryAdapter;
+import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.ItemClickListener;
 import com.github.xiaofei_dev.gank.ui.view.GankRandomView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
@@ -100,14 +101,14 @@ public final class GankCategoryRandomFragment extends GankBaseFragment implement
             ((RefreshView) activity).hideRefresh();
         }
         if (getUserVisibleHint()) {
-            ToastUtils.showShort(R.string.networkfailure);
+            ToastUtils.showShort(R.string.network_failure);
         }
 
     }
     private void initCategoryAdapter(){
         mCategoryAdapter = new CategoryAdapter(this, R.layout.item_gank_content,
                 gankList);
-        mCategoryAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        mCategoryAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         mCategoryAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

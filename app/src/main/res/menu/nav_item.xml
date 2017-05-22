@@ -32,11 +32,11 @@
         <item
             android:id="@+id/xiatuijian"
             android:icon="@drawable/ic_xiatuijian"
-            android:title="@string/xiatuijian"/>
+            android:title="@string/xia_tui_jian"/>
         <item
             android:id="@+id/fuli"
             android:icon="@drawable/ic_fuli"
-            android:title="@string/fuli"/>
+            android:title="@string/fu_li"/>
 
     </group>
 

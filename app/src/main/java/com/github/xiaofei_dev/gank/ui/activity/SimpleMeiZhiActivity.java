@@ -98,7 +98,7 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
         {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED)
             {
-                ToastUtils.showShort(R.string.denideHint);
+                ToastUtils.showShort(R.string.deny_hint);
             }
         }
     }
@@ -106,7 +106,7 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        menu.add(0, 0, Menu.NONE,getString(R.string.saveImage));
+        menu.add(0, 0, Menu.NONE,getString(R.string.save_image));
     }
 
     @Override
@@ -114,7 +114,7 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
         Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
         switch (item.getItemId()) {
             case 0:
-                FileUtils.saveImageToGallery(this, bitmap);
+                FileUtils.saveImageToGallery(this, imageView,bitmap);
                 break;
         }
         return super.onContextItemSelected(item);

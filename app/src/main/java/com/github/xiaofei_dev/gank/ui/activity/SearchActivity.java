@@ -124,7 +124,7 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
     @Override
     public void showNetworkError() {
         hideRefresh();
-        ToastUtils.showShort(R.string.networkfailure);
+        ToastUtils.showShort(R.string.network_failure);
     }
     @Override
     public void loadMoreGankData(GankSearchResult gankSearchResult) {
@@ -193,7 +193,7 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
 
     private  void initSearchResultAdapter(){
         mSearchResultAdapter = new SearchResultAdapter(R.layout.item_search,gankList);
-        mSearchResultAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        mSearchResultAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         mSearchResultAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
@@ -216,5 +216,6 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
                 startActivity(intent);
             }
         });
+        mSearchResultAdapter.setAutoLoadMoreSize(1);
     }
 }
