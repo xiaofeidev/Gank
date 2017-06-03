@@ -297,17 +297,19 @@
 #}
 #-keep class **$Properties
 
-
 ### greenDAO 3
-#-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
-#public static java.lang.String TABLENAME;
-#}
-#-keep class **$Properties
+-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
+public static java.lang.String TABLENAME;
+}
+-keep class **$Properties
 
 # If you do not use SQLCipher:
-#-dontwarn org.greenrobot.greendao.database.**
+-dontwarn org.greenrobot.greendao.database.**
 # If you do not use RxJava:
-#-dontwarn rx.**
+-dontwarn rx.**
+
+-keep class com.github.xiaofei_dev.gank.greenDAO.*{ *; } #(实体类所在的包)
+-keep class com.github.xiaofei_dev.gank.greenDAO.bean.*{ *; } #(实体类所在的包)
 
 
 # For using GSON @Expose annotation

@@ -3,6 +3,11 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/collect"
+        android:title="@string/collect"
+        android:icon="@drawable/ic_collect"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/open"
         android:title="@string/open_by_browser"
         app:showAsAction="never"/>

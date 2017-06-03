@@ -5,5 +5,5 @@ package com.github.xiaofei_dev.gank.ui.fragment.call_back_listener;
  */
 
 public interface ItemClickListener {
-    void onItemClick(String url, String title);
+    void onItemClick(String url, String title,String desc);
 }

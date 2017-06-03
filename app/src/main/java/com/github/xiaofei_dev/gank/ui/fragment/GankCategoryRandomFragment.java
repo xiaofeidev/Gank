@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.github.xiaofei_dev.gank.R;
@@ -114,8 +115,9 @@ public final class GankCategoryRandomFragment extends GankBaseFragment implement
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 final String url = mCategoryAdapter.getItem(position).url;
                 final String title = mCategoryAdapter.getItem(position).desc;
+                final String desc = ((TextView)(view.findViewById(R.id.person))).getText().toString();
                 if(getActivity() instanceof ItemClickListener){
-                    ((ItemClickListener) getActivity()).onItemClick(url,title);
+                    ((ItemClickListener) getActivity()).onItemClick(url,title,desc);
                 }else {
                     return;
                 }

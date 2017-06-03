@@ -103,6 +103,9 @@ public final class DayAdapter extends BaseMultiItemQuickAdapter<GankDayBean,Base
                 }
                 StringBuilder stringBuilder = new StringBuilder(40);
                 stringBuilder
+                        .append("tag : ")
+                        .append(gankAPI.type)
+                        .append("    ")
                         .append("by : ")
                         .append(gankAPI.who == null ? "佚名" : gankAPI.who)
                         .append("    ")

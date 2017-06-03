@@ -16,7 +16,6 @@ import java.util.List;
 
 public final class SearchResultAdapter extends BaseQuickAdapter<GankSearchResultBean,BaseViewHolder> {
 
-
     public SearchResultAdapter(int layoutResId, @NonNull List<GankSearchResultBean> data) {
         super(layoutResId, data);
     }
@@ -25,6 +24,9 @@ public final class SearchResultAdapter extends BaseQuickAdapter<GankSearchResult
     protected void convert(BaseViewHolder helper, GankSearchResultBean item) {
         StringBuilder stringBuilder = new StringBuilder(40);
         stringBuilder
+                .append("tag : ")
+                .append(item.type)
+                .append("    ")
                 .append("by : ")
                 .append(item.who == null ? "佚名" : item.who)
                 .append("    ")

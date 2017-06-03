@@ -81,6 +81,13 @@ public final class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        getWindow().getDecorView().setSystemUiVisibility(
+//                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+////                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+//                        /*| View.SYSTEM_UI_FLAG_IMMERSIVE*/);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         /*if (savedInstanceState != null) {
@@ -395,6 +402,10 @@ public final class MainActivity extends AppCompatActivity implements
                         menuItemId = id;
                         randomNormal.setTitle(R.string.random);
                         break;
+                    case R.id.collection:
+                        Intent collectionIntent = new Intent(MainActivity.this,CollectionActivity.class);
+                        startActivity(collectionIntent);
+                        break;
                     case R.id.night:
                         GankBaseFragment fragment = (GankBaseFragment) fm.findFragmentByTag(TAG);
                         if (fragment instanceof GankCategoryRandomFragment | fragment instanceof GankMeizhiRandomFragment) {
@@ -513,10 +524,12 @@ public final class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onItemClick(String url, String title) {
-        Intent intent = new Intent(this, SimpleWebActivity.class);
-        intent.putExtra("URL", url);
-        intent.putExtra("TITLE", title);
+    public void onItemClick(String url, String title,String desc) {
+//        Intent intent = new Intent(this, SimpleWebActivity.class);
+//        intent.putExtra("URL", url);
+//        intent.putExtra("TITLE", title);
+//        intent.putExtra("DESC",desc);
+        Intent intent = SimpleWebActivity.newIntent(this,url,title,desc);
 //        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.
 //                makeSceneTransitionAnimation(this, view, "title");
 //        startActivity(intent, optionsCompat.toBundle());

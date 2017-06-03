@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -106,8 +107,9 @@ public final class GankDayFragment extends GankBaseFragment implements GankDayVi
                 if(view.getTag() != null){
                     final String url = mDayAdapter.getItem(position).mGankAPI.url;
                     final String title = mDayAdapter.getItem(position).mGankAPI.desc;
+                    final String desc = ((TextView)(view.findViewById(R.id.person))).getText().toString();
                     if(getActivity() instanceof ItemClickListener){
-                        ((ItemClickListener) getActivity()).onItemClick(url,title);
+                        ((ItemClickListener) getActivity()).onItemClick(url,title,desc);
                     }else {
                         return;
                     }

@@ -20,7 +20,7 @@ import com.github.xiaofei_dev.gank.util.DateUtils;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017/4/10.
+ * Created by xiaofei on 2017/4/10.
  */
 
 public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHolder> {
@@ -54,6 +54,9 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
 
         StringBuilder stringBuilder = new StringBuilder(40);
         stringBuilder
+                .append("tag : ")
+                .append(item.type)
+                .append("    ")
                 .append("by : ")
                 .append(item.who == null ? "佚名" : item.who)
                 .append("    ")

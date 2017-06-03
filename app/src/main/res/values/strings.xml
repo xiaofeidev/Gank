@@ -30,13 +30,17 @@
     <string name="tools">lykchat信息发送系统是Python3开发的，通过模拟微信网页端，
         基于个人微信号，为系统管理人员提供信息发送工具。
         实现的功能有用户登录管理、微信登陆管理和微信信息发送功能。</string>
-    
+
+    <string name="collect">收藏</string>
     <string name="open_by_browser">从浏览器打开</string>
     <string name="cory_url">复制链接</string>
     <string name="share">分享</string>
-    
+    <string name="collect_done">已收藏</string>
+    <string name="delete_done">已删除一个收藏</string>
+    <string name="collect_empty">这里空空的</string>
+
     <string name="url_copy_success">链接已成功复制至剪贴板</string>
-    
+
     <string name="explain">您必须授予应用读写存储设备的权限才能保存图片哦</string>
     <string name="deny_hint">拒绝授予读写存储设备的权限将无法保存图片哦</string>
     <string name="save_image">保存图片</string>

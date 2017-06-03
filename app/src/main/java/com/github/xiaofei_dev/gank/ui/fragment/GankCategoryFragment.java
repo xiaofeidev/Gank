@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -200,8 +201,9 @@ public final class GankCategoryFragment extends GankBaseFragment implements Gank
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 final String url = mCategoryAdapter.getItem(position).url;
                 final String title = mCategoryAdapter.getItem(position).desc;
+                final String desc = ((TextView)(view.findViewById(R.id.person))).getText().toString();
                 if(getActivity() instanceof ItemClickListener){
-                    ((ItemClickListener) getActivity()).onItemClick(url,title);
+                    ((ItemClickListener) getActivity()).onItemClick(url,title,desc);
                 }else {
                     return;//没必要
                 }

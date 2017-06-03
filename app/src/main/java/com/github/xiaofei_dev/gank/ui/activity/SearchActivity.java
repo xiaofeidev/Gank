@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.github.xiaofei_dev.gank.R;
@@ -42,8 +43,6 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @BindView(R.id.appbar)
-    AppBarLayout mAppbar;
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
     @BindView(R.id.refresh)
@@ -210,10 +209,14 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 final String url = mSearchResultAdapter.getItem(position).url;
                 final String title = mSearchResultAdapter.getItem(position).desc;
-                Intent intent = new Intent(SearchActivity.this, SimpleWebActivity.class);
-                intent.putExtra("URL", url);
-                intent.putExtra("TITLE", title);
+                final String desc = ((TextView)(view.findViewById(R.id.info))).getText().toString();
+                Intent intent = SimpleWebActivity.newIntent(SearchActivity.this,url,title,desc);
+//                Intent intent = new Intent(SearchActivity.this, SimpleWebActivity.class);
+//                intent.putExtra("URL", url);
+//                intent.putExtra("TITLE", title);
                 startActivity(intent);
+
+
             }
         });
         mSearchResultAdapter.setAutoLoadMoreSize(1);

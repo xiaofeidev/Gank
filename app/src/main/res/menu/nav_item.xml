@@ -38,6 +38,7 @@
             android:icon="@drawable/ic_fuli"
             android:title="@string/fu_li"/>
 
+
     </group>
 
     <!--<item android:title="Communicate">
@@ -55,6 +56,11 @@
     <group
         android:id="@+id/second_group"
         android:checkableBehavior="single">
+        <item
+            android:id="@+id/collection"
+            android:icon="@drawable/ic_is_collect"
+            android:title="@string/collect"
+            android:checkable="false"/>
         <item
             android:id="@+id/night"
             android:icon="@drawable/ic_night"
