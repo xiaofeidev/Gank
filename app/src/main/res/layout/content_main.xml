@@ -62,15 +62,6 @@
         android:scrollbars="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
     </android.support.v4.widget.NestedScrollView>-->
-    <!--<TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryText"/>-->
-    <!--<fragment
-        android:name="com.github.xiaofei_dev.gank.ui.fragment.MainFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>-->
     <!--<android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

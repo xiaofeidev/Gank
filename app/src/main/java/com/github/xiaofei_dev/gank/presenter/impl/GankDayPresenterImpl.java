@@ -58,6 +58,7 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
                             mGankDayView.setGankDayInfo(gankDay);
                             //Log.d(TAG, "onNext: "+gankDay.getResults().toString());
                         }else {
+
                             mGankDayView.reGetData();
                         }
                         Log.d(TAG, "onNext: "+gankDay.toString());
@@ -70,7 +71,8 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
 
                     @Override
                     public void onComplete() {
-
+                        //及时清理，其他 presenter 同
+                        compositeDisposable.clear();
                     }
                 });
         compositeDisposable.add(disposable);

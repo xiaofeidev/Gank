@@ -57,7 +57,7 @@ public final class GankSearchActivityPresenterImpl implements GankSearchPresente
 
                     @Override
                     public void onComplete() {
-
+                        compositeDisposable.clear();
                     }
                 });
         compositeDisposable.add(disposable);

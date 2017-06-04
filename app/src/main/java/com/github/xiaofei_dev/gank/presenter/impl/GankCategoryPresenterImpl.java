@@ -56,7 +56,7 @@ public final class GankCategoryPresenterImpl implements GankCategoryPresenter,Ga
 
                     @Override
                     public void onComplete() {
-
+                        compositeDisposable.clear();
                     }
                 });
         compositeDisposable.add(disposable);

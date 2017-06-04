@@ -29,6 +29,7 @@
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
             android:padding="5dp"
+            android:background="@color/drawable_background"
             tools:src="@drawable/ic_launcher"/>
         <!--android:scaleType="center"/>-->
 

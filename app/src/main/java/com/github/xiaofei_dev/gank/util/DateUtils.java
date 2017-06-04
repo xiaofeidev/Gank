@@ -29,12 +29,17 @@ public final class DateUtils {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.add(Calendar.DATE, gankDayFragment.getCount());
+        //写此方法的目的本是为跳过双休日，因为正常来说干货集中营周末是不更新的，可是在 17年6月3号周六这天居然更新了，我的天。
 
-        if(calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SATURDAY){
-            gankDayFragment.setCount();
-            return  toWorkDate(date, gankDayFragment);
-        }else if(calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
-            gankDayFragment.setCount();
+//        if(calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SATURDAY){
+//            gankDayFragment.setCount();
+//            return  toWorkDate(date, gankDayFragment);
+//        }else if(calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
+//            gankDayFragment.setCount();
+//            gankDayFragment.setCount();
+//            return  toWorkDate(date, gankDayFragment);
+//        }
+        if(calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
             gankDayFragment.setCount();
             return  toWorkDate(date, gankDayFragment);
         }

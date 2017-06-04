@@ -6,6 +6,7 @@
     <color name="colorAccent">#03A9F4</color>
 
     <color name="card_background">#ffffff</color>
+    <color name="drawable_background">#fdfdfd</color>
     <color name="layout_background">#fafafa</color>
     <color name="colorPrimaryText">#232323</color>
     <color name="colorSecondText">#BDBDBD</color>

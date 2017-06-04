@@ -53,7 +53,7 @@ public final class GankRandomPresenterImpl implements GankRandomPresenter,GankBa
 
                     @Override
                     public void onComplete() {
-
+                        compositeDisposable.clear();
                     }
                 });
         compositeDisposable.add(disposable);

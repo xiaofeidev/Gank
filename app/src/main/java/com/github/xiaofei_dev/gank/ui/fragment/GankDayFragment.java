@@ -89,7 +89,7 @@ public final class GankDayFragment extends GankBaseFragment implements GankDayVi
         /*mDayAdapter = new SectionAdapter(R.layout.item_gank_content,R.layout.item_gank_category,
                 gankList,this);*/
         mDayAdapter = new DayAdapter(this,gankList);
-        mDayAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
+        mDayAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
         mDayAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override public void onLoadMoreRequested() {
                 //Log.d(TAG, "onLoadMoreRequested: ");
