@@ -51,7 +51,8 @@ public abstract class GankBaseFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recyclerView.smoothScrollToPosition(0);
+//                recyclerView.smoothScrollToPosition(0);
+                recyclerView.getLayoutManager().scrollToPosition(0);
             }
         });
         return view;

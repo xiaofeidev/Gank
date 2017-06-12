@@ -56,7 +56,6 @@ public final class GankCategoryPresenterImpl implements GankCategoryPresenter,Ga
 
                     @Override
                     public void onComplete() {
-                        compositeDisposable.clear();
                     }
                 });
         compositeDisposable.add(disposable);
@@ -65,6 +64,7 @@ public final class GankCategoryPresenterImpl implements GankCategoryPresenter,Ga
 
     @Override
     public void getMoreData(String category, int num, int page) {
+        compositeDisposable.clear();
         Disposable disposable = RetrofitClient.getInstance()
                 .create(RetrofitService.class)
                 .getCategory(category,num,page)

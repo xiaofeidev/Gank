@@ -72,7 +72,7 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
                     @Override
                     public void onComplete() {
                         //及时清理，其他 presenter 同
-                        compositeDisposable.clear();
+//                        compositeDisposable.clear();
                     }
                 });
         compositeDisposable.add(disposable);
@@ -80,6 +80,8 @@ public final class GankDayPresenterImpl implements GankDayPresenter,GankBasePres
 
     @Override
     public void getMoreData(String date) {
+        //及时清理，其他 presenter 同
+        compositeDisposable.clear();
         Disposable disposable = RetrofitClient.getInstance()
                 .create(RetrofitService.class)
                 .getGankDay(date)
