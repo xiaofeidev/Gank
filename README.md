@@ -15,7 +15,7 @@ MVP+RxJava 2.x+retrofit 2.x
 
 [OkHttp](https://github.com/square/okhttp)
 
-[RxAndroid](https://github.com/ReactiveX/RxAndroid)好像没用到
+[RxAndroid](https://github.com/ReactiveX/RxAndroid)
 
 [butterknife](https://github.com/JakeWharton/butterknife)
 
