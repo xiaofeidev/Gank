@@ -7,25 +7,25 @@ MVP+RxJava 2.x+retrofit 2.x
 
 安装包下载地址：[Gank](http://www.coolapk.com/apk/com.github.xiaofei_dev.gank)
 # 用到的开源库
-[gson](https://github.com/google/gson)
+[Gson](https://github.com/google/gson)
 
 [RxJava 2.x](https://github.com/ReactiveX/RxJava)
 
-[retrofit 2.x](https://github.com/square/retrofit)
+[Retrofit 2.x](https://github.com/square/retrofit)
 
 [OkHttp](https://github.com/square/okhttp)
 
 [RxAndroid](https://github.com/ReactiveX/RxAndroid)
 
-[butterknife](https://github.com/JakeWharton/butterknife)
+[Butterknife](https://github.com/JakeWharton/butterknife)
 
-[greenDao](https://github.com/greenrobot/greenDAO)
+[GreenDao](https://github.com/greenrobot/greenDAO)
 
 [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 
-[glide](https://github.com/bumptech/glide)
+[Glide](https://github.com/bumptech/glide)
 
-[materialsearchview](https://github.com/MiguelCatalan/MaterialSearchView)
+[MaterialSearchView](https://github.com/MiguelCatalan/MaterialSearchView)
 
 
 <img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-30-10-31-21.png" width="40%" height="40%"><img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-30-10-31-36.png" width="40%" height="40%">
