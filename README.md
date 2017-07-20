@@ -17,7 +17,7 @@ MVP+RxJava 2.x+retrofit 2.x
 
 [RxAndroid](https://github.com/ReactiveX/RxAndroid)
 
-[Butterknife](https://github.com/JakeWharton/butterknife)
+[ButterKnife](https://github.com/JakeWharton/butterknife)
 
 [GreenDao](https://github.com/greenrobot/greenDAO)
 
