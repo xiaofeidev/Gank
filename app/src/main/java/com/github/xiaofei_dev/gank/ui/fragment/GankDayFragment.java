@@ -113,7 +113,6 @@ public final class GankDayFragment extends GankBaseFragment implements GankDayVi
                     }else {
                         return;
                     }
-
                 }
             }
         });
