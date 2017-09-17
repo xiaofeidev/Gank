@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
@@ -26,8 +27,8 @@ import android.widget.Toast;
 
 import com.github.xiaofei_dev.gank.R;
 import com.github.xiaofei_dev.gank.ui.fragment.GankBaseFragment;
-import com.github.xiaofei_dev.gank.ui.fragment.GankCategoryRandomFragment;
 import com.github.xiaofei_dev.gank.ui.fragment.GankCategoryFragment;
+import com.github.xiaofei_dev.gank.ui.fragment.GankCategoryRandomFragment;
 import com.github.xiaofei_dev.gank.ui.fragment.GankDayFragment;
 import com.github.xiaofei_dev.gank.ui.fragment.GankMeiZhiFragment;
 import com.github.xiaofei_dev.gank.ui.fragment.GankMeizhiRandomFragment;
@@ -36,13 +37,14 @@ import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.MeiZhiItemClic
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
 import com.github.xiaofei_dev.gank.util.ToastUtils;
-import com.melnykov.fab.FloatingActionButton;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+//import com.melnykov.fab.FloatingActionButton;
 
 /**
  * 将一个方法或已知不会被继承的类声明为 final 的不会带来性能的提升，但是会帮助编译器优化代码

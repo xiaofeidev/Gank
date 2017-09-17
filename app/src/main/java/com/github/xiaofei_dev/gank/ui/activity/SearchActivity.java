@@ -3,7 +3,7 @@ package com.github.xiaofei_dev.gank.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +24,6 @@ import com.github.xiaofei_dev.gank.ui.view.GankSearchView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
 import com.github.xiaofei_dev.gank.util.ToastUtils;
-import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -175,7 +174,7 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
         mRecyclerView.setLayoutManager(linearLayoutManager);
         initSearchResultAdapter();
         mRecyclerView.setAdapter(mSearchResultAdapter);
-        mFab.attachToRecyclerView(mRecyclerView);
+//        mFab.attachToRecyclerView(mRecyclerView);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
