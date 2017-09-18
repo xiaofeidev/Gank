@@ -3,6 +3,7 @@ package com.github.xiaofei_dev.gank.ui.activity;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,6 @@ import com.github.xiaofei_dev.gank.greenDAO.VisitDao;
 import com.github.xiaofei_dev.gank.greenDAO.bean.Collect;
 import com.github.xiaofei_dev.gank.ui.adapter.CollectionAdapter;
 import com.github.xiaofei_dev.gank.util.ToastUtils;
-import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -85,7 +85,7 @@ public final class CollectionActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(linearLayoutManager);
         initCollectionAdapter();
         mRecyclerView.setAdapter(mCollectionAdapter);
-        mFab.attachToRecyclerView(mRecyclerView);
+//        mFab.attachToRecyclerView(mRecyclerView);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -2,6 +2,7 @@ package com.github.xiaofei_dev.gank.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.xiaofei_dev.gank.R;
-import com.melnykov.fab.FloatingActionButton;
 
 /**
  * Created by Administrator on 2017/4/21.
@@ -47,7 +47,7 @@ public abstract class GankBaseFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         //recyclerView.setAdapter(mDayAdapter);
         FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        fab.attachToRecyclerView(recyclerView);
+//        fab.attachToRecyclerView(recyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

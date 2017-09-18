@@ -10,7 +10,7 @@
     tools:src="@mipmap/ic_launcher"/>
     &lt;!&ndash;android:adjustViewBounds="true"
     android:scaleType="fitXY"&ndash;&gt;-->
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
@@ -30,16 +30,20 @@
             android:theme="@style/AppTheme.AppBarOverlay"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
     </android.support.design.widget.AppBarLayout>-->
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar"
+        android:id="@+id/appBar"/>
 
     <com.github.xiaofei_dev.gank.ui.custom_view.RatioImageView
         android:id="@+id/meizhi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:transitionName="simple transition name"
-        tools:src="@drawable/ic_launcher"/>
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_launcher"
+        android:layout_below="@+id/appBar"
+        android:layout_alignParentStart="true" />
     <!--android:layout_marginTop="?attr/actionBarSize"-->
-</FrameLayout>
+</RelativeLayout>
 
 

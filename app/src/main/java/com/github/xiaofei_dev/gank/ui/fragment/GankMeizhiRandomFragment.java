@@ -3,6 +3,7 @@ package com.github.xiaofei_dev.gank.ui.fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -20,7 +21,6 @@ import com.github.xiaofei_dev.gank.ui.view.GankRandomView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
 import com.github.xiaofei_dev.gank.util.ToastUtils;
-import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -63,7 +63,7 @@ public final class GankMeizhiRandomFragment extends GankBaseFragment implements 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mMeiZhiAdapter);
         FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        fab.attachToRecyclerView(recyclerView);
+//        fab.attachToRecyclerView(recyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
