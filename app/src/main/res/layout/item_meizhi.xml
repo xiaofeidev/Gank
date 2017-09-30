@@ -11,7 +11,7 @@
     app:cardCornerRadius="4dp"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <com.github.xiaofei_dev.gank.ui.custom_view.RatioImageView
+    <ImageView
         android:id="@+id/meizhi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

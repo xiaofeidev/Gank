@@ -1,19 +1,14 @@
 package com.github.xiaofei_dev.gank.ui.adapter;
 
-import android.graphics.ColorFilter;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.github.xiaofei_dev.gank.R;
-import com.github.xiaofei_dev.gank.ui.custom_view.RatioImageView;
 import com.github.xiaofei_dev.gank.model.bean.GankAPI;
 import com.github.xiaofei_dev.gank.util.DateUtils;
 
@@ -28,20 +23,10 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
     @NonNull
     private final Fragment mContext;
 
-    private final ColorFilter mColorFilter;
-
     public CategoryAdapter(@NonNull Fragment context, int layoutResId,
                            @NonNull List<GankAPI> data) {
         super(layoutResId, data);
         mContext = context;
-
-        float[]array = new float[]{
-                1,0,0,0,-70,
-                0,1,0,0,-70,
-                0,0,1,0,-70,
-                0,0,0,1,0,
-        };
-        mColorFilter = new ColorMatrixColorFilter(new ColorMatrix(array));
     }
 
    /* public void setData(List<GankAPI> data){
@@ -64,8 +49,6 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
                 .append(DateUtils.dateFormat(item.publishedAt));
         helper.setText(R.id.title,item.desc)
                 .setText(R.id.person,stringBuilder.toString());
-                //.setText(R.id.person,item.getWho() == null ? "by : " + "佚名" : "by : " + item.getWho());
-                //.setText(R.id.date, "at : " + DateUtils.dateFormat(item.getPublishedAt()));
         if(item.images!= null){
             Glide.with(mContext)
                     .load(item.images.get(0))
@@ -77,17 +60,7 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
                     //.centerCrop()
                     //.into((ImageView) helper.getView(R.id.card_image));
-                    .into((ImageView)helper.getConvertView().findViewById(R.id.card_image))
-                    .getSize(new SizeReadyCallback() {
-                        @Override
-                        public void onSizeReady(int width, int height) {
-                           /* if (!helper.getConvertView().isShown()) {
-                                helper.getConvertView().setVisibility(View.VISIBLE);
-                            }*/
-                            ((RatioImageView) helper.getConvertView().findViewById(R.id.card_image))
-                                    .setColorFilter(mColorFilter);
-                        }
-                    });
+                    .into((ImageView)helper.getConvertView().findViewById(R.id.card_image));
         }else {
             Glide.with(mContext)
                     .load(R.drawable.ic_place)
@@ -99,18 +72,7 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
                     //.centerCrop()
                     //.into((ImageView) helper.getView(R.id.card_image));
-                    .into((ImageView)helper.getConvertView().findViewById(R.id.card_image))
-                    .getSize(new SizeReadyCallback() {
-                        @Override
-                        public void onSizeReady(int width, int height) {
-                            /*if (!helper.getConvertView().isShown()) {
-                                helper.getConvertView().setVisibility(View.VISIBLE);
-                            }*/
-                            ((RatioImageView) helper.getConvertView().findViewById(R.id.card_image))
-                                    .setColorFilter(mColorFilter);
-                        }
-                    });
-
+                    .into((ImageView)helper.getConvertView().findViewById(R.id.card_image));
         }
 
     }

@@ -1,11 +1,13 @@
 package com.github.xiaofei_dev.gank.ui.fragment;
 
 import android.app.Activity;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +85,7 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recyclerView.smoothScrollToPosition(0);
+                recyclerView.getLayoutManager().scrollToPosition(0);
             }
         });
         return view;
@@ -140,7 +142,10 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
     }
 
     private void initMeiZhiAdapter(){
-        mMeiZhiAdapter = new MeiZhiAdapter(this,R.layout.item_meizhi,gankList);
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point p = new Point();
+        display.getSize(p);
+        mMeiZhiAdapter = new MeiZhiAdapter(this,R.layout.item_meizhi,gankList,p.x);
         //mMeiZhiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         mMeiZhiAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override public void onLoadMoreRequested() {

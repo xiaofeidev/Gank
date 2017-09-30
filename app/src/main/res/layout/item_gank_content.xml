@@ -23,7 +23,7 @@
         android:layout_height="wrap_content">
         <!--android:background="@drawable/button_state_selector">-->
 
-        <com.github.xiaofei_dev.gank.ui.custom_view.RatioImageView
+        <ImageView
             android:id="@+id/card_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
