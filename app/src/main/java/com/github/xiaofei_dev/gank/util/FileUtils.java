@@ -24,7 +24,7 @@ public final class FileUtils {
     /**
      * 保存图片
      */
-    public static void saveImageToGallery(final Context context, View view,Bitmap bmp) {
+    public static void saveImageToGallery(final Context context, View view, Bitmap bmp) {
         // 首先保存图片
         boolean save = false;
         File appDir = new File(Environment.getExternalStorageDirectory(), "Gank");

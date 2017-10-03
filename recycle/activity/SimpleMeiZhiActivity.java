@@ -12,8 +12,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -31,6 +33,7 @@ import butterknife.ButterKnife;
 
 public final class SimpleMeiZhiActivity extends AppCompatActivity {
     private static final String TAG = "SimpleMeiZhiActivity";
+    //private Drawable mDrawable;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -46,8 +49,14 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-//        registerForContextMenu(imageView);
-        String url = getIntent().getStringExtra("URL");
+//        Bitmap bitmap = (Bitmap)(getIntent().getBundleExtra("BITMAP").getParcelable("BITMAP"));
+//        imageView.setImageBitmap(bitmap);
+//        Drawable drawable = new BitmapDrawable(getResources(),bitmap);
+        registerForContextMenu(imageView);
+        String url = getIntent().getStringExtra("URL");//url作为局部变量
+        //Bitmap bitmap = (Bitmap)(getIntent().getParcelableExtra("BITMAP"));
+        //mDrawable = new BitmapDrawable(getResources(),bitmap);
+
         Glide.with(this)
                 .load(url)
                 .asBitmap()
@@ -61,6 +70,25 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
                 //.placeholder(drawable)
                 //.centerCrop()
                 .into(imageView);
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                ToastUtils.showShort(R.string.explain);
+            } else {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        1);
+            }
+        }
+//                .getSize(new SizeReadyCallback() {
+//                    @Override
+//                    public void onSizeReady(int width, int height) {
+//                        startPostponedEnterTransition();
+//                    }
+//                });
     }
 
     @Override
@@ -68,16 +96,14 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
     {
         if (requestCode == 1)
         {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            if (grantResults[0] != PackageManager.PERMISSION_GRANTED)
             {
-                saveImage();
-            }else {
                 ToastUtils.showShort(R.string.deny_hint);
             }
         }
     }
 
-   /* @Override
+    @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.add(0, 0, Menu.NONE,getString(R.string.save_image));
@@ -93,12 +119,6 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
         }
         return super.onContextItemSelected(item);
 
-    }*/
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_simple_meizhi, menu);
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -107,28 +127,8 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
             case android.R.id.home:
                 onBackPressed();
                 break;
-            case R.id.save:
-                saveImage();
-                break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    //保存妹纸图
-    private void saveImage(){
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                ToastUtils.showShort(R.string.explain);
-            } else {
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        1);
-            }
-        }else {
-            Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-            FileUtils.saveImageToGallery(this, imageView ,bitmap);
-        }
     }
 
 

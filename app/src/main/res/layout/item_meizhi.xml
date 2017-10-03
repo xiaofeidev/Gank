@@ -15,7 +15,7 @@
         android:id="@+id/meizhi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         tools:src="@drawable/ic_about"/>
         <!--android:transitionName="simple transition name"/>-->

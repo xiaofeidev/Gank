@@ -33,7 +33,7 @@
     <include layout="@layout/toolbar"
         android:id="@+id/appBar"/>
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/meizhi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

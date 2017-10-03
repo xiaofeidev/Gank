@@ -105,7 +105,7 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_simpe_web, menu);
+        getMenuInflater().inflate(R.menu.activity_simple_web, menu);
         if (VisitDao.query(url).size() != 0){
             menu.findItem(R.id.collect).setIcon(R.drawable.ic_is_collect);
         }

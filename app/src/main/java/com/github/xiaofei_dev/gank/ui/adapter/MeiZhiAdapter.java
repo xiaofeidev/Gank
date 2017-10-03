@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -27,8 +28,7 @@ public final class MeiZhiAdapter extends BaseQuickAdapter<GankAPI,BaseViewHolder
     private final int screenWidth;
 
     public MeiZhiAdapter(@NonNull Fragment context, int layoutResId,
-                         @NonNull List<GankAPI> data,
-                         int width) {
+                         @NonNull List<GankAPI> data, int width) {
         super(layoutResId, data);
         mContext = context;
         screenWidth = width;
@@ -47,7 +47,9 @@ public final class MeiZhiAdapter extends BaseQuickAdapter<GankAPI,BaseViewHolder
                 .load(item.url)
                 .asBitmap()
                 .fitCenter()
-                .override(width,width*2)
+                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                .override(width,width)
+//                .into(imageView);
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
