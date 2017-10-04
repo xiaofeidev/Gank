@@ -13,7 +13,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.github.xiaofei_dev.gank.R;
 import com.github.xiaofei_dev.gank.model.bean.GankAPI;
-import com.github.xiaofei_dev.gank.util.DensityUtil;
 
 import java.util.List;
 
@@ -25,13 +24,13 @@ public final class MeiZhiAdapter extends BaseQuickAdapter<GankAPI,BaseViewHolder
 
     @NonNull
     private final Fragment mContext;
-    private final int screenWidth;
+    private final int mWidth;
 
     public MeiZhiAdapter(@NonNull Fragment context, int layoutResId,
                          @NonNull List<GankAPI> data, int width) {
         super(layoutResId, data);
         mContext = context;
-        screenWidth = width;
+        mWidth = width;
     }
 
     public void clearData(){
@@ -40,20 +39,19 @@ public final class MeiZhiAdapter extends BaseQuickAdapter<GankAPI,BaseViewHolder
 
     @Override
     protected void convert(final BaseViewHolder helper, final GankAPI item) {
-        final int width = (screenWidth - DensityUtil.dp2px(mContext.getActivity(),30f))/2;
         final ImageView imageView = (ImageView)(helper.getConvertView().findViewById(R.id.meizhi));
-        imageView.getLayoutParams().width = width;
+        imageView.getLayoutParams().width = mWidth;
         Glide.with(mContext)
                 .load(item.url)
                 .asBitmap()
                 .fitCenter()
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .override(width,width)
+                .override(mWidth,mWidth)
 //                .into(imageView);
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
-                        int height = (int) (((float)width)/bitmap.getWidth()*bitmap.getHeight());
+                        int height = (int) (((float)mWidth)/bitmap.getWidth()*bitmap.getHeight());
                         imageView.getLayoutParams().height = height;
                         imageView.setImageBitmap(bitmap);
                     }

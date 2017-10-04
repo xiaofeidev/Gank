@@ -16,9 +16,9 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.github.xiaofei_dev.gank.R;
 import com.github.xiaofei_dev.gank.model.GankCategory;
-import com.github.xiaofei_dev.gank.model.bean.GankAPI;
+import com.github.xiaofei_dev.gank.model.convert.GankMeizhiAPI;
 import com.github.xiaofei_dev.gank.presenter.impl.GankCategoryPresenterImpl;
-import com.github.xiaofei_dev.gank.ui.adapter.MeiZhiAdapter;
+import com.github.xiaofei_dev.gank.ui.adapter.MeiZhiAdapter1;
 import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.MeiZhiItemClickListener;
 import com.github.xiaofei_dev.gank.ui.view.GankCategoryView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
@@ -29,6 +29,8 @@ import com.github.xiaofei_dev.gank.util.ToastUtils;
 import java.util.ArrayList;
 
 import io.reactivex.disposables.CompositeDisposable;
+
+import static com.github.xiaofei_dev.gank.model.convert.GankAPI2GankMeizhiAPIKt.GankAPIList2GankMeizhiAPIList;
 
 /**
  * Created by Administrator on 2017/4/17.
@@ -44,9 +46,9 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
     private static final int TOTAL_COUNTER = 10000;//最多项目数
     private boolean isErr = true;
 
-    private ArrayList<GankAPI> gankList = new ArrayList<>();
+    private ArrayList<GankMeizhiAPI> gankList = new ArrayList<>();
     private GankCategoryPresenterImpl mGankCategoryPresenter;
-    private MeiZhiAdapter mMeiZhiAdapter;
+    private MeiZhiAdapter1 mMeiZhiAdapter;
 
     private static final String TAG = "GankMeiZhiFragment";
 
@@ -120,7 +122,7 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
     @Override
     public void setGankDataInfo(GankCategory gankCategory) {
         //gankList = gankCategory.getDataList();
-        mMeiZhiAdapter.setNewData(gankCategory.getDataList());
+        mMeiZhiAdapter.setNewData(GankAPIList2GankMeizhiAPIList(this,gankCategory.getDataList()));
         Activity activity = getActivity();
         if(activity instanceof RefreshView){
             ((RefreshView) activity).hideRefresh();
@@ -147,7 +149,7 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
         Point p = new Point();
         display.getSize(p);
         int width = (p.x - DensityUtil.dp2px(getActivity(),30f))/2;
-        mMeiZhiAdapter = new MeiZhiAdapter(this,R.layout.item_meizhi,gankList,width);
+        mMeiZhiAdapter = new MeiZhiAdapter1(this,R.layout.item_meizhi,gankList);
         //mMeiZhiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         mMeiZhiAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override public void onLoadMoreRequested() {
@@ -193,7 +195,7 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
             return;
         }
         if (isErr) {
-            gankList = gankCategory.getDataList();
+            gankList = GankAPIList2GankMeizhiAPIList(this,gankCategory.getDataList());
             if(gankList == null){
                 loadMoreDateFail();
                 return;

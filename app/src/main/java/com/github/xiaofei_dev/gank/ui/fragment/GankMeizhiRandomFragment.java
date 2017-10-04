@@ -22,6 +22,7 @@ import com.github.xiaofei_dev.gank.ui.fragment.call_back_listener.MeiZhiItemClic
 import com.github.xiaofei_dev.gank.ui.view.GankRandomView;
 import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.ui.view.base.GankBaseView;
+import com.github.xiaofei_dev.gank.util.DensityUtil;
 import com.github.xiaofei_dev.gank.util.ToastUtils;
 
 import java.util.ArrayList;
@@ -112,7 +113,8 @@ public final class GankMeizhiRandomFragment extends GankBaseFragment implements 
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point p = new Point();
         display.getSize(p);
-        mMeiZhiAdapter = new MeiZhiAdapter(this, R.layout.item_meizhi,gankList,p.x);
+        int width = (p.x - DensityUtil.dp2px(getActivity(),30f))/2;
+        mMeiZhiAdapter = new MeiZhiAdapter(this, R.layout.item_meizhi,gankList,width);
         //mMeiZhiAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         mMeiZhiAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
