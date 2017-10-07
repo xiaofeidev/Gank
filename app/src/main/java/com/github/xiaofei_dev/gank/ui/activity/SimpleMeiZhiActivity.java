@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,7 +19,11 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.github.xiaofei_dev.gank.R;
+import com.github.xiaofei_dev.gank.ui.view.RefreshView;
 import com.github.xiaofei_dev.gank.util.FileUtils;
 import com.github.xiaofei_dev.gank.util.ToastUtils;
 
@@ -29,11 +34,13 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2017/4/23.
  */
 
-public final class SimpleMeiZhiActivity extends AppCompatActivity {
+public final class SimpleMeiZhiActivity extends AppCompatActivity implements RefreshView {
     private static final String TAG = "SimpleMeiZhiActivity";
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    @BindView(R.id.refresh)
+    SwipeRefreshLayout mRefresh;
     @BindView(R.id.meizhi)
     ImageView imageView;
     @Override
@@ -46,12 +53,34 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+        //图片还未加载完成时显示正在加载
+        showRefresh();
+        mRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mRefresh.setRefreshing(false);
+            }
+        });
+
 //        registerForContextMenu(imageView);
         String url = getIntent().getStringExtra("URL");
         Glide.with(this)
                 .load(url)
-                .asBitmap()
+                .listener(new RequestListener<String, GlideDrawable>() {
+                    @Override
+                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                        //图片加载完成
+                        hideRefresh();
+                        return false;
+                    }//这个用于监听图片是否加载完成
+                })
                 .error(R.drawable.error)
+//                .asBitmap()
                 .fitCenter()
                 //跳过内存可节省内存但加载动画会不自然。。应该可通过占位图来解决
                 .skipMemoryCache(true)
@@ -75,6 +104,23 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity {
                 ToastUtils.showShort(R.string.deny_hint);
             }
         }
+    }
+
+    @Override
+    public void showRefresh() {
+        mRefresh.setRefreshing(true);
+    }
+
+    @Override
+    public void hideRefresh() {
+        mRefresh.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(mRefresh != null){
+                    mRefresh.setRefreshing(false);
+                }
+            }
+        },500);
     }
 
    /* @Override

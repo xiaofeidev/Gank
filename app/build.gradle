@@ -9,8 +9,8 @@ android {
         applicationId "com.github.xiaofei_dev.gank"
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 9
-        versionName "1.4.2"
+        versionCode 10
+        versionName "1.4.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         /*packagingOptions {
