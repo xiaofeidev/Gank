@@ -3,7 +3,6 @@ package com.github.xiaofei_dev.gank.ui.activity;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -172,8 +171,16 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity implements Ref
                         1);
             }
         }else {
-            Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+            imageView.setDrawingCacheEnabled(true);
+            imageView.buildDrawingCache(true);
+//            Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+//            Bitmap bitmap = imageView.getDrawingCache();
+            Bitmap bitmap =
+                    Bitmap.createBitmap(imageView.getDrawingCache(true),
+                            0, 0, imageView.getMeasuredWidth(), imageView.getMeasuredHeight());
             FileUtils.saveImageToGallery(this, imageView ,bitmap);
+            imageView.setDrawingCacheEnabled(false);
+            imageView.destroyDrawingCache();
         }
     }
 

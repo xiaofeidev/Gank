@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.FileProvider;
 import android.view.View;
 
 import com.github.xiaofei_dev.gank.R;
@@ -65,7 +67,15 @@ public final class FileUtils {
                         public void onClick(View v) {
                             Intent intentImage = new Intent(Intent.ACTION_VIEW);
                             intentImage.addCategory(Intent.CATEGORY_DEFAULT);
-                            intentImage.setDataAndType(Uri.fromFile(file), "image/*");
+//                            intentImage.setDataAndType(Uri.fromFile(file), "image/*");
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                                intentImage.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                                Uri contentUri = FileProvider.getUriForFile(context, "com.github.xiaofei_dev.gank.fileProvider", file);
+                                intentImage.setDataAndType(contentUri, "image/*");
+                            } else {
+                                intentImage.setDataAndType(Uri.fromFile(file), "image/*");
+                                intentImage.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            }
                             context.startActivity(intentImage);
                         }
                     })
