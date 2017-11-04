@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Gank</string>
-    <string name="app_version">Gank V1.1</string>
+    <string name="app_version">Gank V1.4.6</string>
 
     <string name="news">每日干货</string>
     <string name="android">Android</string>
@@ -36,7 +36,8 @@
     <string name="cory_url">复制链接</string>
     <string name="share">分享</string>
     <string name="collect_done">已收藏</string>
-    <string name="delete_done">已删除一个收藏</string>
+    <string name="collect_delete">已收藏</string>
+    <string name="delete_done">已删除一条收藏</string>
     <string name="collect_empty">这里空空的</string>
 
     <string name="url_copy_success">链接已成功复制至剪贴板</string>

@@ -1,6 +1,7 @@
 package com.github.xiaofei_dev.gank.ui.fragment;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -159,11 +160,18 @@ public final class GankMeiZhiFragment extends GankBaseFragment implements GankCa
                 }
             }
         }, recyclerView);
+
+        View view = new View(getActivity());
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(1,DensityUtil.dp2px(getActivity(),5));
+        view.setLayoutParams(layoutParams);
+        view.setBackgroundColor(Color.WHITE);
+        mMeiZhiAdapter.addHeaderView(view);
+
         mMeiZhiAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //mImageView = (ImageView)getView().findViewById(R.id.meizhi);//??
-                final String url = mMeiZhiAdapter.getItem(position).url;
+                final String url = ((GankAPI) adapter.getItem(position)).url;
                 //final Drawable drawable = ((ImageView)view.findViewById(R.id.meizhi)).getDrawable();//
 //                MeizhiFragment meizhiFragment =  (MeizhiFragment) getFragmentManager().findFragmentByTag(TAG);
 //                if(meizhiFragment == null) meizhiFragment = MeizhiFragment.newInstance(str);

@@ -58,7 +58,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/collection"
-            android:icon="@drawable/ic_is_collect"
+            android:icon="@drawable/ic_collection_true"
             android:title="@string/collect"
             android:checkable="false"/>
         <item

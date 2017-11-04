@@ -107,7 +107,7 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_simple_web, menu);
         if (VisitDao.query(url).size() != 0){
-            menu.findItem(R.id.collect).setIcon(R.drawable.ic_is_collect);
+            menu.findItem(R.id.collect).setIcon(R.drawable.ic_collection_true);
         }
         return super.onCreateOptionsMenu(menu);
     }
@@ -125,11 +125,12 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
                     collect.setTitle(title);
                     collect.setDesc(desc);
                     VisitDao.insertCollections(collect);
-                    item.setIcon(R.drawable.ic_is_collect);
+                    item.setIcon(R.drawable.ic_collection_true);
                     ToastUtils.showShort(R.string.collect_done);
                 }else {
                     VisitDao.deleteCollection(VisitDao.query(url).get(0));
-                    item.setIcon(R.drawable.ic_collect);
+                    item.setIcon(R.drawable.ic_collection_false);
+                    ToastUtils.showShort(R.string.collect_delete);
                 }
                 break;
 
