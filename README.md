@@ -29,6 +29,6 @@ MVP+RxJava 2.x+retrofit 2.x
 
 # 界面预览
 
-<img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-30-10-31-21.png" width="25%" height="25%"><img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-30-10-31-36.png" width="25%" height="25%">
-<img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-29-21-01-17.png" width="25%" height="25%"><img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-29-21-01-41.png" width="25%" height="25%">
+<img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-30-10-31-21.png" width="24%" height="24%"><img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-30-10-31-36.png" width="24%" height="24%">
+<img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-29-21-01-17.png" width="24%" height="24%"><img src="https://github.com/xiaofei-dev/Gank/blob/master/art/enframe_2017-04-29-21-01-41.png" width="24%" height="24%">
 
