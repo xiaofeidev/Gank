@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.miguelcatalan:materialsearchview-1.4.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/39fb5291d0d6ff64dec500c0989802d434b0384a/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/39fb5291d0d6ff64dec500c0989802d434b0384a/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.miguelcatalan/materialsearchview/1.4.0/3b8caddbe9447c1eb0a3d1ea2bd27891c942671d/materialsearchview-1.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

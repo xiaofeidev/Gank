@@ -3,11 +3,12 @@
 buildscript {
 //    ext.kotlin_version = '1.1.4-3'
     repositories {
+        google()
         jcenter()
         mavenCentral() // add repository
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.1.4'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
 //        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // add plugin
 
@@ -18,6 +19,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
         maven { url "https://jitpack.io" }
     }
