@@ -5,7 +5,7 @@ MVP+RxJava 2.x+retrofit 2.x
 
 应用数据来自[干货集中营](https://gank.io/)
 
-安装包下载地址：[Gank](http://www.coolapk.com/apk/com.github.xiaofei_dev.gank)
+安装包下载地址：[http://www.coolapk.com/apk/com.github.xiaofei_dev.gank](http://www.coolapk.com/apk/com.github.xiaofei_dev.gank)
 # 用到的开源库
 [Gson](https://github.com/google/gson)
 
