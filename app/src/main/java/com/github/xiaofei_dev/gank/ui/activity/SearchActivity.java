@@ -72,7 +72,6 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
         initViews();
 
         mGankSearchActivityPresenter = new GankSearchActivityPresenterImpl(new CompositeDisposable(),this);
-        //mGankSearchActivityPresenter.subscribeSearch(mCategory,PAGE_SIZE,page++);
         firstGetDate();
     }
 
@@ -174,7 +173,6 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
         mRecyclerView.setLayoutManager(linearLayoutManager);
         initSearchResultAdapter();
         mRecyclerView.setAdapter(mSearchResultAdapter);
-//        mFab.attachToRecyclerView(mRecyclerView);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -209,11 +207,8 @@ public final class SearchActivity extends AppCompatActivity implements GankSearc
                 final String url = mSearchResultAdapter.getItem(position).url;
                 final String title = mSearchResultAdapter.getItem(position).desc;
                 final String desc = ((TextView)(view.findViewById(R.id.info))).getText().toString();
-                Intent intent = SimpleWebActivity.newIntent(SearchActivity.this,url,title,desc);
-//                Intent intent = new Intent(SearchActivity.this, SimpleWebActivity.class);
-//                intent.putExtra("URL", url);
-//                intent.putExtra("TITLE", title);
-                startActivity(intent);
+                Intent intent1 = SimpleWebActivity.newIntent(SearchActivity.this,url,title,desc);
+                startActivity(intent1);
 
 
             }

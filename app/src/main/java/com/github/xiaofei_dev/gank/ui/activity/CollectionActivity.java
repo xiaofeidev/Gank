@@ -85,7 +85,6 @@ public final class CollectionActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(linearLayoutManager);
         initCollectionAdapter();
         mRecyclerView.setAdapter(mCollectionAdapter);
-//        mFab.attachToRecyclerView(mRecyclerView);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,8 +102,6 @@ public final class CollectionActivity extends AppCompatActivity {
     }
 
     private void initCollectionAdapter(){
-//        mCollectionArrayList = VisitDao.queryAll();
-//        Collections.reverse(mCollectionArrayList);
         mCollectionAdapter = new CollectionAdapter(R.layout.item_search,mCollectionArrayList);
         mCollectionAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
 

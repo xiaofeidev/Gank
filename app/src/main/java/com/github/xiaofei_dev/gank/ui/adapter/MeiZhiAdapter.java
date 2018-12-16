@@ -47,7 +47,6 @@ public final class MeiZhiAdapter extends BaseQuickAdapter<GankAPI,BaseViewHolder
                 .fitCenter()
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .override(mWidth,mWidth)
-//                .into(imageView);
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {

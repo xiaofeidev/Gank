@@ -466,13 +466,7 @@ public final class MainActivity extends AppCompatActivity implements
             }
         });
     }
-//    public void startSimpleMeiZhiActivity(String url,View view){
-//        Intent intent = new Intent(this,SimpleMeiZhiActivity.class);
-//        intent.putExtra("URL",url);
-//        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.
-//                makeSceneTransitionAnimation(this, view, "simple transition name");
-//        startActivity(intent, optionsCompat.toBundle());
-//    }
+
     private void switchTheme(){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         if (!sp.getBoolean(KEY_NIGHT_MODE, false)) {

@@ -42,9 +42,6 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
     @BindView(R.id.refresh)
     SwipeRefreshLayout mRefresh;
 
-//    @BindView(R.id.title)
-//    TextView mTitle;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,19 +51,6 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
         setContentView(R.layout.activity_simple_web);
         ButterKnife.bind(this);
         initView();
-//        ViewCompat.setTransitionName(getTitleViewInToolbar(mToolbar), TOOL_BAR_TITLE);
-//        getTitleViewInToolbar(mToolbar).setTextColor(getResources().getColor(R.color.black));
-//        ViewCompat.setTransitionName(mTitle, TOOL_BAR_TITLE);
-//        mTitle.setText(title);
-//        ActionBar actionBar = getSupportActionBar();
-//        if(actionBar != null){
-//            setTitle(title);
-//            actionBar.setDisplayShowHomeEnabled(true);
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//        }
-        //setTitle(title);//??
-        //getTitleViewInToolbar(mToolbar).setText(title);//??
-        //ViewCompat.setTransitionName(getTitleViewInToolbar(mToolbar), TOOL_BAR_TITLE);
     }
     public static Intent newIntent(Context context,String url,String title,String desc){
         Intent intent = new Intent(context,SimpleWebActivity.class);
@@ -170,8 +154,6 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
     private void initView(){
         setSupportActionBar(mToolbar);
         setTitle(title);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -235,24 +217,4 @@ public final class SimpleWebActivity extends AppCompatActivity implements Refres
             }
         });
     }
-
-    /*private TextView getTitleViewInToolbar(Toolbar obj) {
-        TextView textView = null;
-        try {
-            Field title = obj.getClass().getDeclaredField("mTitleTextView");
-            title.setAccessible(true);
-            textView = (TextView) title.get(obj);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return textView;
-    }*/
-
-//    private Intent getIntentInstance(Context context){
-//        return new Intent(context,SimpleWebActivity.class);
-//    }
-
-
 }

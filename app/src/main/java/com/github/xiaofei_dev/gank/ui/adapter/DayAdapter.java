@@ -64,7 +64,6 @@ public final class DayAdapter extends BaseMultiItemQuickAdapter<GankDayBean,Base
                             //.thumbnail( 0.1f )
                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
                             //.centerCrop()
-                            //.into((ImageView) helper.getView(R.id.card_image));
                             .into((ImageView)helper.getConvertView().findViewById(R.id.card_image));
                 }
                 StringBuilder stringBuilder = new StringBuilder(40);

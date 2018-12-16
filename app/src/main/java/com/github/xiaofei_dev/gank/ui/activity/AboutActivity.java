@@ -20,7 +20,6 @@ public final class AboutActivity extends AppCompatActivity {
             case R.id.itemOpenSource:
                 String url = getString(R.string.open_source_link);
                 OpenUtil.openLink(view.getContext(), null, url, false);
-                //OpenUtil.openLink(view.getContext(), null, url, false);
                 finish();
                 break;
             case R.id.itemScoreAndFeedback:

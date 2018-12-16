@@ -79,7 +79,7 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity implements Ref
                     }//这个用于监听图片是否加载完成
                 })
                 .error(R.drawable.error)
-//                .asBitmap()
+                //.asBitmap()
                 .fitCenter()
                 //跳过内存可节省内存但加载动画会不自然。。应该可通过占位图来解决
                 .skipMemoryCache(true)
@@ -122,24 +122,6 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity implements Ref
         },500);
     }
 
-   /* @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        menu.add(0, 0, Menu.NONE,getString(R.string.save_image));
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-        switch (item.getItemId()) {
-            case 0:
-                FileUtils.saveImageToGallery(this, imageView,bitmap);
-                break;
-        }
-        return super.onContextItemSelected(item);
-
-    }*/
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_simple_meizhi, menu);
@@ -173,8 +155,6 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity implements Ref
         }else {
             imageView.setDrawingCacheEnabled(true);
             imageView.buildDrawingCache(true);
-//            Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-//            Bitmap bitmap = imageView.getDrawingCache();
             Bitmap bitmap =
                     Bitmap.createBitmap(imageView.getDrawingCache(true),
                             0, 0, imageView.getMeasuredWidth(), imageView.getMeasuredHeight());
@@ -183,31 +163,6 @@ public final class SimpleMeiZhiActivity extends AppCompatActivity implements Ref
             imageView.destroyDrawingCache();
         }
     }
-
-
-//    if (ContextCompat.checkSelfPermission(this,
-//    Manifest.permission.WRITE_CALENDAR) != ) {
-//        // Should we show an explanation?
-//        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-//                Manifest.permission.READ_CONTACTS)) {
-//
-//        } else {
-//
-//            // No explanation needed, we can request the permission.
-//
-//            ActivityCompat.requestPermissions(this,
-//                    new String[]{Manifest.permission.READ_CONTACTS},
-//                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-//        }
-//    }
-
-//    private SimpleTarget target = new SimpleTarget<Bitmap>() {
-//        @Override
-//        public void onResourceReady(Bitmap bitmap, GlideAnimation glideAnimation) {
-//            imageView.setImageBitmap(bitmap);
-//            mBitmap = bitmap;
-//        }
-//    };
 }
 
 

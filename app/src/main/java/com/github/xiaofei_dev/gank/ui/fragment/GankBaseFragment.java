@@ -25,15 +25,14 @@ public abstract class GankBaseFragment extends Fragment {
     protected RecyclerView recyclerView;
     private static final String TAG = "GankBaseFragment";
 
-    //GankBasePresenter mGankBasePresenter;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setRetainInstance(true);
         Bundle bundle = getArguments();
-        if (bundle != null)
+        if (bundle != null) {
             mCategory = bundle.getString(ARGUMENT);
+        }
         Log.d(TAG, "onCreate: ");
     }
 

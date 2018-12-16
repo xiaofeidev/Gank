@@ -35,8 +35,5 @@ public final class SearchResultAdapter extends BaseQuickAdapter<GankSearchResult
         helper
                 .setText(R.id.search_title,item.desc)
                 .setText(R.id.info,stringBuilder.toString());
-//              .setText(R.id.search_type,"tab : " + item.type)
-//              .setText(R.id.search_person,item.who == null ?  "by : " + "佚名" : "by : " + item.who)
-//              .setText(R.id.search_time, "at : " + DateUtils.dateFormat(item.publishedAt));
     }
 }

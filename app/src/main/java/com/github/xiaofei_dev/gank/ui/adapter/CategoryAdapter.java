@@ -29,11 +29,6 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
         mContext = context;
     }
 
-   /* public void setData(List<GankAPI> data){
-        mData = data;
-    }*/
-
-
     @Override
     protected void convert(final BaseViewHolder helper, GankAPI item) {
 
@@ -59,7 +54,6 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
                     .thumbnail( 0.1f )
                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
                     //.centerCrop()
-                    //.into((ImageView) helper.getView(R.id.card_image));
                     .into((ImageView)helper.getConvertView().findViewById(R.id.card_image));
         }else {
             Glide.with(mContext)
@@ -71,7 +65,6 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
                     //.thumbnail( 0.1f )
                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
                     //.centerCrop()
-                    //.into((ImageView) helper.getView(R.id.card_image));
                     .into((ImageView)helper.getConvertView().findViewById(R.id.card_image));
         }
 
