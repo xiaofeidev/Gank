@@ -1,5 +1,5 @@
 # Gank
-干货集中营 的又一款安卓客户端
+干货集中营 的又一个安卓客户端
 
 MVP+RxJava 2.x+retrofit 2.x
 
