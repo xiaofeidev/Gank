@@ -31,7 +31,6 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
 
     @Override
     protected void convert(final BaseViewHolder helper, GankAPI item) {
-
         StringBuilder stringBuilder = new StringBuilder(40);
         stringBuilder
                 .append("tag : ")
@@ -44,7 +43,7 @@ public final class CategoryAdapter extends BaseQuickAdapter<GankAPI,BaseViewHold
                 .append(DateUtils.dateFormat(item.publishedAt));
         helper.setText(R.id.title,item.desc)
                 .setText(R.id.person,stringBuilder.toString());
-        if(item.images!= null){
+        if(item.images!= null && !item.images.isEmpty()){
             Glide.with(mContext)
                     .load(item.images.get(0))
                     .asBitmap()

@@ -43,7 +43,7 @@ public final class DayAdapter extends BaseMultiItemQuickAdapter<GankDayBean,Base
                 break;
             case GankDayBean.ITEM:
                 GankAPI gankAPI = item.mGankAPI;
-                if(gankAPI.images!= null){
+                if(gankAPI.images != null && !gankAPI.images.isEmpty()){
                     Glide.with(mContext)
                             .load(gankAPI.images.get(0))
                             .asBitmap()//一律作为普通静态图
@@ -82,7 +82,5 @@ public final class DayAdapter extends BaseMultiItemQuickAdapter<GankDayBean,Base
             default:
                 break;
         }
-
     }
-
 }
