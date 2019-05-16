@@ -38,7 +38,6 @@
         <activity
             android:name=".ui.activity.AboutActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-            android:screenOrientation="portrait"
             android:theme="@style/Dialog">
         </activity>
         <activity

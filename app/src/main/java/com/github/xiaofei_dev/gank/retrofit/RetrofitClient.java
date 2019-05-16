@@ -5,6 +5,7 @@ package com.github.xiaofei_dev.gank.retrofit;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -14,14 +15,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public final class RetrofitClient {
-
-    private RetrofitClient() {}
-    private static final OkHttpClient okHttpClient =new  OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .build();
-
-    private static class ClientHolder {
-        private static Retrofit retrofit = new Retrofit.Builder()
+    private static RetrofitClient instance = new RetrofitClient();
+    private RetrofitClient() {
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient okHttpClient = new  OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .addInterceptor(loggingInterceptor)
+                .build();
+        retrofit = new Retrofit.Builder()
                 .baseUrl(API.API_BASE)
                 .client(okHttpClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -29,7 +31,9 @@ public final class RetrofitClient {
                 .build();
     }
 
+    private Retrofit retrofit;
+
     public static Retrofit getInstance() {
-        return ClientHolder.retrofit;
+        return instance.retrofit;
     }
 }

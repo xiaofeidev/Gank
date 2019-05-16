@@ -117,6 +117,21 @@ public final class GankDay {
         if(results.androidList != null){
             String date = results.androidList.get(0).publishedAt;
             list.add(new GankDayBean(GankDayBean.DATE,date));
+        }else if (results.iOSList != null){
+            String date = results.iOSList.get(0).publishedAt;
+            list.add(new GankDayBean(GankDayBean.DATE,date));
+        }else if (results.AppList != null){
+            String date = results.AppList.get(0).publishedAt;
+            list.add(new GankDayBean(GankDayBean.DATE,date));
+        }else if (results.webList != null){
+            String date = results.webList.get(0).publishedAt;
+            list.add(new GankDayBean(GankDayBean.DATE,date));
+        }else if (results.expandList != null){
+            String date = results.expandList.get(0).publishedAt;
+            list.add(new GankDayBean(GankDayBean.DATE,date));
+        }else if (results.xiatuijianList != null){
+            String date = results.xiatuijianList.get(0).publishedAt;
+            list.add(new GankDayBean(GankDayBean.DATE,date));
         }
 
 
@@ -144,7 +159,7 @@ public final class GankDay {
                 list.add(new GankDayBean(GankDayBean.ITEM,gankAPI));
             }
         }
-        if(category.contains("扩展资源")){
+        if(category.contains("拓展资源") || category.contains("扩展资源")){
             list.add(new GankDayBean(GankDayBean.CATEGORY,"扩展资源"));
             for (GankAPI gankAPI:results.expandList){
                 list.add(new GankDayBean(GankDayBean.ITEM,gankAPI));

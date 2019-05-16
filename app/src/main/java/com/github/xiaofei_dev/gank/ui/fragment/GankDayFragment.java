@@ -141,10 +141,7 @@ public final class GankDayFragment extends GankBaseFragment implements GankDayVi
     @Override
     public void getMoreData() {
         mGankDayPresenterImpl.getMoreData(DateUtils.toWorkDate(DateUtils.getCurrentDate(),this));
-
     }
-
-
 
     @Override
     public void setGankDayInfo(GankDay gankDay) {
